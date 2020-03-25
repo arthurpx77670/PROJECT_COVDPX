@@ -1,0 +1,13 @@
+{% block content %}
+    <h1>Profil</h1>
+    {% if user.is_authenticated %}
+        Vous êtes connecté, {{ user.username }} !
+        <a href="{% url 'logout' %}" class="top-menu">
+            <span class="glyphicon glyphicon-plus">déconnexion</span>
+        </a>
+        <a href="{% url 'edit' user.id %}" class="top-menu">
+             <span class="glyphicon glyphicon-plus">éditer</span>
+        </a>
+    {% else %}
+    {% endif %}
+{% endblock %}

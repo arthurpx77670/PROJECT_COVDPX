@@ -1,0 +1,16 @@
+{% block content %}
+
+    <h1>Mot de passe oubié</h1>
+
+    {% if error %}
+        <p><strong>Utilisateur inconnu ou mauvais email ou identifiant.</strong></p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Se connecter" />
+    </form>
+
+
+{% endblock %}
