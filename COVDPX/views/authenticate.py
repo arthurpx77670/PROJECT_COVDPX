@@ -22,7 +22,7 @@ def login_(request):
                 error = True
     else:
         form = loginForm()
-    return render(request, 'login.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/login.html', {'form': form, 'error': error})
 
 
 def forget_psw(request):
@@ -32,14 +32,17 @@ def forget_psw(request):
         if form.is_valid():
             username = form.cleaned_data["username"]
             email = form.cleaned_data["email"]
-            user = User.objects.get(email=email)  # Nous vérifions si les données sont correctes
-            if user and user.username == username:  # Si l'objet renvoyé n'est pas None
-                return redirect('reboot_psw',user.id)
-            else:  # sinon une erreur sera affichée
+            if email and User.objects.filter(email=email).count():
+                user = User.objects.get(email=email)  # Nous vérifions si les données sont correctes
+                if user and user.username == username:  # Si l'objet renvoyé n'est pas None
+                    return redirect('reboot_psw',user.id)
+                else:  # sinon une erreur sera affichée
+                    error = True
+            else:
                 error = True
     else:
         form = ForgetPswForm()
-    return render(request, 'forget_psw.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/forget_psw.html', {'form': form, 'error': error})
 
 
 def reboot_psw(request,userId):
@@ -53,7 +56,7 @@ def reboot_psw(request,userId):
             return redirect('login')
     else:
         form = RebootPswForm()
-    return render(request, 'reboot_psw.html',  {'form':form})
+    return render(request, 'authenticate/reboot_psw.html',  {'form':form})
 
 
 def logout_(request):
@@ -79,7 +82,7 @@ def edit(request, userId):
                 return redirect('profil')
     else:
         form = EditForm(initial={'username': user.username , 'first_name': user.first_name, 'last_name': user.last_name})
-    return render(request, 'edit.html', {'form': form})
+    return render(request, 'authenticate/edit.html', {'form': form})
 
 
 def registration(request):
@@ -96,7 +99,7 @@ def registration(request):
                 return redirect('../login')
     else:
         form = RegistrationForm()
-    return render(request, 'registration.html', {'form': form})
+    return render(request, 'authenticate/registration.html', {'form': form})
 
 
 

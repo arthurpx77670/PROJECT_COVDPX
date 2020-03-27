@@ -3,10 +3,10 @@ from django.http import HttpResponse
 
 
 def profil(request):
-    return render(request, "profil.html")
+    return render(request, "index/profil.html")
 
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'index/home.html')
 
 
