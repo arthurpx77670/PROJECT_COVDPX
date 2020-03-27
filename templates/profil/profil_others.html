@@ -1,0 +1,16 @@
+{% block content %}
+    <h2>Profil des autres</h2>
+
+    <ul>
+        {% for userOther in users %}
+            {% if user.id != userOther.id%}
+                <li>
+                    <a href="{% url 'profil' userOther.id %}" class="top-menu">
+                        <span class="glyphicon glyphicon-plus">{{userOther.username}}</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}

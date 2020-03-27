@@ -15,18 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from COVDPX.views import index
-from COVDPX.views import authenticate
+from COVDPX.views import authenticate, profil
 from django.urls import path
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index.home),
+
+    #authenticate
     path('registration/', authenticate.registration, name='registration'),
     path('login/', authenticate.login_, name='login'),
     path('login/forget_psw', authenticate.forget_psw, name='forget_psw'),
     path('login/forget_psw/reboot_psw?<int:userId>', authenticate.reboot_psw, name='reboot_psw'),
-    path('login/profil', index.profil, name='profil'),
+
+    #profil
+    path('login/profil?<int:userId>', profil.profil, name='profil'),
     path('login/profil/logout', authenticate.logout_, name='logout'),
-    path('login/profil/edit?<int:userId>', authenticate.edit, name='edit'),
+    path('login/profil?<int:userId>/edit', authenticate.edit, name='edit'),
 ]

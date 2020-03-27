@@ -1,0 +1,6 @@
+{% if request.user.is_authenticated %}
+    {% include "./profil_auth.html" %}
+{% endif %}
+
+{% include "./profil_informations.html" %}
+{% include "./profil_others.html" %}

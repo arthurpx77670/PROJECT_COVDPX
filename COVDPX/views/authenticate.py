@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from COVDPX.models.forms import loginForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
@@ -17,7 +16,7 @@ def login_(request):
             user = authenticate(username=username, password=password)  # Nous vérifions si les données sont correctes
             if user:  # Si l'objet renvoyé n'est pas None
                 login(request, user)  # nous connectons l'utilisateur
-                return redirect('profil')
+                return redirect('profil', user.id)
             else: # sinon une erreur sera affichée
                 error = True
     else:
@@ -79,7 +78,7 @@ def edit(request, userId):
                 user.first_name = first_name
                 user.last_name = last_name
                 user.save()
-                return redirect('profil')
+                return redirect('profil', user.id)
     else:
         form = EditForm(initial={'username': user.username , 'first_name': user.first_name, 'last_name': user.last_name})
     return render(request, 'authenticate/edit.html', {'form': form})
