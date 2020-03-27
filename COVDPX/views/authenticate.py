@@ -1,7 +1,7 @@
-from COVDPX.models.forms import loginForm
+from COVDPX.models.forms.forms_auth import loginForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
-from COVDPX.models.forms import RegistrationForm, EditForm, RebootPswForm, ForgetPswForm
+from COVDPX.models.forms.forms_auth import RegistrationForm, EditForm, RebootPswForm, ForgetPswForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 
@@ -21,10 +21,10 @@ def login_(request):
                 error = True
     else:
         form = loginForm()
-    return render(request, 'authenticate/login.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/auth_login.html', {'form': form, 'error': error})
 
 
-def forget_psw(request):
+def forget(request):
     error = False
     if request.method == "POST":
         form = ForgetPswForm(request.POST)
@@ -34,17 +34,17 @@ def forget_psw(request):
             if email and User.objects.filter(email=email).count():
                 user = User.objects.get(email=email)  # Nous vérifions si les données sont correctes
                 if user and user.username == username:  # Si l'objet renvoyé n'est pas None
-                    return redirect('reboot_psw',user.id)
+                    return redirect('reboot',user.id)
                 else:  # sinon une erreur sera affichée
                     error = True
             else:
                 error = True
     else:
         form = ForgetPswForm()
-    return render(request, 'authenticate/forget_psw.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/auth_forget.html', {'form': form, 'error': error})
 
 
-def reboot_psw(request,userId):
+def reboot(request,userId):
     user = User.objects.get(id=userId)
     if request.method == "POST":
         form = RebootPswForm(request.POST)
@@ -55,7 +55,7 @@ def reboot_psw(request,userId):
             return redirect('login')
     else:
         form = RebootPswForm()
-    return render(request, 'authenticate/reboot_psw.html',  {'form':form})
+    return render(request, 'authenticate/auth_reboot.html', {'form':form})
 
 
 def logout_(request):
@@ -81,7 +81,7 @@ def edit(request, userId):
                 return redirect('profil', user.id)
     else:
         form = EditForm(initial={'username': user.username , 'first_name': user.first_name, 'last_name': user.last_name})
-    return render(request, 'authenticate/edit.html', {'form': form})
+    return render(request, 'authenticate/auth_edit.html', {'form': form})
 
 
 def registration(request):
@@ -98,7 +98,7 @@ def registration(request):
                 return redirect('../login')
     else:
         form = RegistrationForm()
-    return render(request, 'authenticate/registration.html', {'form': form})
+    return render(request, 'authenticate/auth_regist.html', {'form': form})
 
 
 

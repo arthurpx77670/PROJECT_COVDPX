@@ -1,5 +1,11 @@
 {% block content %}
-    <h2>Informations de {{ user.username }}</h2>
+    {% if request.user.id == user.id%}
+        <h2>Vos informations</h2>
+    {% endif %}
+    {% if request.user.id != user.id%}
+        <h2>Les informations de {{ user.username }}</h2>
+    {% endif %}
+
     <ul>
         <li>
             Prénom : {{ user.first_name }}
