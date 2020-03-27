@@ -1,9 +1,8 @@
 {% block content %}
     <h2>Profil des autres</h2>
-
     <ul>
         {% for userOther in users %}
-            {% if user.id != userOther.id%}
+            {% if user.id != userOther.id and request.user.id != userOther.id %}
                 <li>
                     <a href="{% url 'profil' userOther.id %}" class="top-menu">
                         <span class="glyphicon glyphicon-plus">{{userOther.username}}</span>
@@ -12,5 +11,4 @@
             {% endif %}
         {% endfor %}
     </ul>
-
 {% endblock %}

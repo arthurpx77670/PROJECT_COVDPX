@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% block content %}
 
-</body>
-</html>
+    {#    friend#}
+    <form method="post" action="{% url 'invitation' user.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Invitation" />
+    </form>
+
+{% endblock %}

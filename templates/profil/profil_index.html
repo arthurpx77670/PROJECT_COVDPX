@@ -1,6 +1,13 @@
 {% if request.user.is_authenticated %}
-    {% include "./profil_auth.html" %}
+    {% include "./profil_internal.html" %}
 {% endif %}
 
-{% include "./profil_informations.html" %}
+{% if user.is_authenticated  %}
+    {% include "./profil_inform.html" %}
+{% endif %}
+
+{% if user.is_authenticated and request.user.id != user.id %}
+    {% include "./profil_external.html" %}
+{% endif %}
+
 {% include "./profil_others.html" %}

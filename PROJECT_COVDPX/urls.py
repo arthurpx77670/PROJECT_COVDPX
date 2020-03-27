@@ -23,14 +23,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index.home),
 
-    #authenticate
+    #form_auth
     path('registration/', authenticate.registration, name='registration'),
     path('login/', authenticate.login_, name='login'),
-    path('login/forget_psw', authenticate.forget_psw, name='forget_psw'),
-    path('login/forget_psw/reboot_psw?<int:userId>', authenticate.reboot_psw, name='reboot_psw'),
+    path('login/forget', authenticate.forget, name='forget'),
+    path('login/forget/reboot?<int:userId>', authenticate.reboot, name='reboot'),
 
-    #profil
+    #auth_profil
     path('login/profil?<int:userId>', profil.profil, name='profil'),
     path('login/profil/logout', authenticate.logout_, name='logout'),
     path('login/profil?<int:userId>/edit', authenticate.edit, name='edit'),
+
+    #profil_action
+    path('login/profil?<int:userId>/invitation', profil.invitation, name='invitation'),
+
 ]

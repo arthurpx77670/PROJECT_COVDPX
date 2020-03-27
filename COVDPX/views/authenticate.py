@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from COVDPX.models.forms.forms_auth import RegistrationForm, EditForm, RebootPswForm, ForgetPswForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
+from COVDPX.models.db.db_profil import Profil
 
 
 def login_(request):
@@ -89,12 +90,13 @@ def registration(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
             email = form.cleaned_data.get('email')
             if email and User.objects.filter(email=email).exclude(username=username).count():
                 form.add_error('email',"This email address is already in use. Please supply a different email address")
             else:
                 form.save()
+                user = User.objects.get(username=username)
+                Profil.objects.create(user=user)
                 return redirect('../login')
     else:
         form = RegistrationForm()

@@ -1,11 +1,7 @@
 {% block content %}
-    {% if request.user.id == user.id%}
-        <h2>Vos informations</h2>
-    {% endif %}
-    {% if request.user.id != user.id%}
-        <h2>Les informations de {{ user.username }}</h2>
-    {% endif %}
 
+    <h2>Informations de {{ user.username }}</h2>
+    {#    informations#}
     <ul>
         <li>
             Prénom : {{ user.first_name }}
@@ -17,5 +13,15 @@
             Dernière connexion : {{ user.last_login }}
         </li>
     </ul>
+
+    {#   list friends#}
+    <h4>{{ friends.count }} Amis :</h4>
+    {% for friend in friends %}
+        <li>
+            <a href="{% url 'profil' friend.id %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus">{{friend.username}}</span>
+            </a>
+        </li>
+    {% endfor %}
 
 {% endblock %}
