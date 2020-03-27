@@ -24,4 +24,14 @@
         </li>
     {% endfor %}
 
+    {#   list posts#}
+    <h4>{{ posts.count }} Posts :</h4>
+    {% for post in posts %}
+        <li>
+            {{ post.title }} :
+            {{ post.text }} écrit le :
+            {{ post.date }}
+        </li>
+    {% endfor %}
+
 {% endblock %}

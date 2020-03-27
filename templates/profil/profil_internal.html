@@ -1,5 +1,6 @@
 {% block content %}
     <h1>Profil de {{ request.user.username }}</h1>
+    {#    action authenticate#}
     <ul>
         <li>
             <a href="{% url 'logout' %}" class="top-menu">
@@ -16,5 +17,20 @@
                 <span class="glyphicon glyphicon-plus">Vos informations</span>
             </a>
         </li>
+
+        {#    write post #}
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <p>
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+                    {% if field.help_text %}
+                        <small style="color: grey">{{ field.help_text }}</small>
+                    {% endif %}
+                </p>
+            {% endfor %}
+            <button type="submit">Envoyé</button>
+        </form>
     </ul>
 {% endblock %}
