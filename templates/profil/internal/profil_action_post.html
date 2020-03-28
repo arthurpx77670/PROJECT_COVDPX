@@ -1,0 +1,17 @@
+{% block content %}
+
+    {#    form post #}
+    <form method="post" action="{% url 'post' user.id%}">
+        {% csrf_token %}
+        {% for field in Postform %}
+            <p>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.help_text %}
+                    <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+            </p>
+        {% endfor %}
+        <button type="submit">Envoyé</button>
+    </form>
+{% endblock %}

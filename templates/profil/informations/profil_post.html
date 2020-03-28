@@ -1,0 +1,9 @@
+{% block content %}
+    {# post informations#}
+    <li>Titre : {{ post.title }}</li>
+    <li>Contenu :{{ post.text }}</li>
+    <li> Ecrit le :{{ post.date }}</li>
+
+    {#  like post#}
+    <li>Nombre de J'aime : {{ post.like_set.all.count}}</li>
+{% endblock %}

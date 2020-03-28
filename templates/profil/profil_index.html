@@ -1,13 +1,53 @@
+{# user connect #}
 {% if request.user.is_authenticated %}
-    {% include "./profil_internal.html" %}
+    {#   action auth #}
+    {% include "./internal/profil_action_auth.html" %}
+
+    {#    form post #}
+    {% include "./internal/profil_action_post.html" %}
 {% endif %}
 
-{% if user.is_authenticated  %}
-    {% include "./profil_inform.html" %}
+
+{# user #}
+{% if user.is_authenticated %}
+
+    {# informations #}
+    {% include "./informations/profil_inform.html" %}
+    {% include "./informations/profil_friends.html" %}
+
+
+    {% if request.user != user and request.user.is_authenticated %}
+        {# inviations friend #}
+        {% include "./external/profil_action_invita.html" %}
+    {% endif %}
+
+
+    {# posts #}
+    <ul>
+        {% for post in posts %}
+            {#   information post#}
+            {% include "./informations/profil_post.html" %}
+
+            {#  form like#}
+            {% if request.user != user and request.user.is_authenticated %}
+                {% include "./external/profil_action_like.html" %}
+            {% endif %}
+
+            {#  commentaries by post#}
+            <ul>
+                {#   informations commentary#}
+                {% include "./informations/profil_com.html" %}
+
+                {# form commentary #}
+                {% if request.user != user and request.user.is_authenticated %}
+                    {% include "./external/profil_action_com.html" %}
+                {% endif %}
+            </ul>
+        {% endfor %}
+    </ul>
+
 {% endif %}
 
-{% if user.is_authenticated and request.user.id != user.id %}
-    {% include "./profil_external.html" %}
-{% endif %}
 
-{% include "./profil_others.html" %}
+{# search user  #}
+{% include "./informations/profil_others.html" %}

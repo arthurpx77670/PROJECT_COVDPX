@@ -1,0 +1,13 @@
+{% block content %}
+
+    {#   list friends#}
+    <h4>{{ friends.count }} Amis :</h4>
+    {% for friend in friends %}
+        <li>
+            <a href="{% url 'profil' friend.id %}" class="top-menu">
+                <span class="glyphicon glyphicon-plus">{{friend.username}}</span>
+            </a>
+        </li>
+    {% endfor %}
+
+{% endblock %}

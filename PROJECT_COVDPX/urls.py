@@ -38,5 +38,6 @@ urlpatterns = [
     path('login/profil?<int:userId>/invitation', profil.invitation, name='invitation'),
     path('login/profil?<int:userId>/post', profil.post, name='post'),
     path('login/profil/commentary/<int:userId>/<int:postId>', profil.commentary, name='commentary'),
+    path('login/profil/like/<int:userId>/<int:postId>', profil.like, name='like'),
 
 ]

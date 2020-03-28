@@ -1,9 +1,0 @@
-{% block content %}
-
-    {#    friend#}
-    <form method="post" action="{% url 'invitation' user.id %}">
-        {% csrf_token %}
-        <input type="submit" value="Invitation" />
-    </form>
-
-{% endblock %}

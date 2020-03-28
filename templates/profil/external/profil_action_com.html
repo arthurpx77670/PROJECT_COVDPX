@@ -1,0 +1,14 @@
+{% block content %}
+{#    comment a posts of a user#}
+    <li>Commenter :
+        <form method="post" action="{% url 'commentary'  user.id post.id %}">
+            {% csrf_token %}
+            <p>
+                {% for field in Commentaryform %}
+                    {{ field }}
+                {% endfor %}
+            </p>
+            <button type="submit">Envoyé</button>
+        </form>
+    </li>
+{% endblock %}
