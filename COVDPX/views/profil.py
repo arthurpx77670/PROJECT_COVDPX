@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from COVDPX.models.db.db_profil import Profil, Post
-from COVDPX.models.forms.form_profil import PostForm
+from COVDPX.models.db.db_profil import Profil, Post, Commentary
+from COVDPX.models.forms.form_profil import PostForm, CommentaryForm
 from django.http import HttpResponse
 
 
@@ -20,19 +20,16 @@ def profil(request, userId):
     # list posts
     posts = Post.objects.filter(author_id=userId)
 
-    # post
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            title = form.cleaned_data.get('title')
-            text = form.cleaned_data.get('text')
-            author = request.user
-            post = Post.objects.create(tile=title, text=text, author=author)
-            post.save()
-    else:
-        form = PostForm()
+    # commentaries = Commentary.objects.filter(post_id=pot)
 
-    return render(request, "profil/profil_index.html", {"user": user, "users": users, "friends": friends, "form": form, "posts": posts})
+    # form post
+    Postform = PostForm()
+
+    # form commentary
+    Commentaryform = CommentaryForm()
+
+    return render(request, "profil/profil_index.html",
+                  {"user": user, "users": users, "friends": friends, "Postform": Postform, "posts": posts, "Commentaryform": Commentaryform})
 
 
 def invitation(request, userId):
@@ -41,3 +38,30 @@ def invitation(request, userId):
     friend = User.objects.get(id=userId)
     profil.friends.add(friend)
     return redirect('profil',userId)
+
+
+def commentary(request, postId, userId):
+    if request.method == 'POST':
+
+        Commentaryform = CommentaryForm(request.POST)
+        if Commentaryform.is_valid():
+            text = Commentaryform.cleaned_data.get('text')
+            author = request.user
+            post = Post.objects.get(id=postId)
+            commentary = Commentary.objects.create(text=text, author=author, post=post)
+            commentary.save()
+
+    return redirect('profil',userId)
+
+
+def post(request, userId):
+
+    Postform = PostForm(request.POST)
+    if Postform.is_valid():
+        title = Postform.cleaned_data.get('title')
+        text = Postform.cleaned_data.get('text')
+        author = request.user
+        post = Post.objects.create(title=title, text=text, author=author)
+        post.save()
+
+    return redirect('profil', userId)

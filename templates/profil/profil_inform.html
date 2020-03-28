@@ -26,12 +26,35 @@
 
     {#   list posts#}
     <h4>{{ posts.count }} Posts :</h4>
-    {% for post in posts %}
-        <li>
-            {{ post.title }} :
-            {{ post.text }} écrit le :
-            {{ post.date }}
-        </li>
-    {% endfor %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                {{ post.title }} :
+                {{ post.text }} écrit le :
+                {{ post.date }}
+                <ul>
+                    {% for commentary in post.commentary_set.all %}
+                        <li>{{ commentary.text }}</li>
+                        <li> par : {{ commentary.author }}</li>
+                        <li>le : {{ commentary.date }}</li>
+                    {% endfor %}
+                </ul>
 
+                {#    form commentary #}
+                <form method="post" action="{% url 'commentary'  user.id post.id%}">
+                    {% csrf_token %}
+                    {% for field in Commentaryform %}
+                        <p>
+                            {{ field.label_tag }}<br>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small style="color: grey">{{ field.help_text }}</small>
+                            {% endif %}
+                        </p>
+                    {% endfor %}
+                    <button type="submit">Envoyé</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

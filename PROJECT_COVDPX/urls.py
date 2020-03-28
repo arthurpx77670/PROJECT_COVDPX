@@ -36,5 +36,7 @@ urlpatterns = [
 
     #profil_action
     path('login/profil?<int:userId>/invitation', profil.invitation, name='invitation'),
+    path('login/profil?<int:userId>/post', profil.post, name='post'),
+    path('login/profil/commentary/<int:userId>/<int:postId>', profil.commentary, name='commentary'),
 
 ]
