@@ -1,7 +1,11 @@
+{% load static %}
 {% block content %}
 
     {#    informations#}
     <h2>Informations de {{ user.username }}</h2>
+    {% if user.profil.picture.name != "False" %}
+        <img src="{% static "/media/"%}{{ user.profil.picture.url }}", width='50', height='50', alt="Pas de photo"/>
+    {% endif %}
     <ul>
         <li>
             Prénom : {{ user.first_name }}
@@ -11,9 +15,6 @@
         </li>
         <li>
             Dernière connexion : {{ user.last_login }}
-        </li>
-        <li>
-            {{ posts.count }} Posts :
         </li>
     </ul>
 

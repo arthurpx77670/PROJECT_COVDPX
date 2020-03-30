@@ -1,3 +1,5 @@
+{% load static %}
+
 {% block content %}
     {# post informations#}
     <li>Titre : {{ post.title }}</li>
@@ -6,4 +8,11 @@
 
     {#  like post#}
     <li>Nombre de J'aime : {{ post.like_set.all.count}}</li>
+
+
+    {#  file  #}
+    {% if post.file != "False" %}
+        <li> Document :</li>
+        <embed src="{% static "/media/"%}{{ post.file }}" width="300px" height="400px" type="application/pdf" />
+    {% endif %}
 {% endblock %}

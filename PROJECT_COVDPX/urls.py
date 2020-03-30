@@ -14,8 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from COVDPX.views import index
-from COVDPX.views import authenticate, profil
+from SERVER.views import index
+from SERVER.views import authenticate, profil
 from django.urls import path
 
 
@@ -39,5 +39,4 @@ urlpatterns = [
     path('login/profil?<int:userId>/post', profil.post, name='post'),
     path('login/profil/commentary/<int:userId>/<int:postId>', profil.commentary, name='commentary'),
     path('login/profil/like/<int:userId>/<int:postId>', profil.like, name='like'),
-
 ]

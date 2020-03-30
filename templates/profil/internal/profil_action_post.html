@@ -1,7 +1,8 @@
 {% block content %}
 
-    {#    form post #}
-    <form method="post" action="{% url 'post' user.id%}">
+    <h4>Postez</h4>
+    {#   write form post #}
+    <form method="post" enctype="multipart/form-data" action="{% url 'post' user.id%}">
         {% csrf_token %}
         {% for field in Postform %}
             <p>
@@ -14,4 +15,5 @@
         {% endfor %}
         <button type="submit">Envoyé</button>
     </form>
+
 {% endblock %}

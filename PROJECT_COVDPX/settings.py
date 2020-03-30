@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'COVDPX.apps.CovdpxConfig',
-    'COVDPX.models.db',
+    'SERVER.apps.CovdpxConfig',
+    'SERVER.models.db',
 
 ]
 
@@ -66,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -122,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+# manage file
+MEDIA_ROOT = os.path.join(BASE_DIR, 'SERVER/static/media/')

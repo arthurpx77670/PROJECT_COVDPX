@@ -14,6 +14,7 @@
     {# informations #}
     {% include "./informations/profil_inform.html" %}
     {% include "./informations/profil_friends.html" %}
+    {% include "./informations/profil_files.html" %}
 
 
     {% if request.user != user and request.user.is_authenticated %}
@@ -23,6 +24,7 @@
 
 
     {# posts #}
+    <h4>{{ posts.count }} Posts :</h4>
     <ul>
         {% for post in posts %}
             {#   information post#}
