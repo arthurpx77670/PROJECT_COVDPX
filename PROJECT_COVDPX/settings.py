@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'SERVER.middleware.stats.stats_middleware'
 ]
 
 ROOT_URLCONF = 'PROJECT_COVDPX.urls'
