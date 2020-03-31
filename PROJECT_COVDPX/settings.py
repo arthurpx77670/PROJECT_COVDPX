@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'SERVER.apps.CovdpxConfig',
     'SERVER.models.db',
-
 ]
 
 MIDDLEWARE = [
@@ -50,7 +49,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'SERVER.middleware.stats.stats_middleware'
+    'SERVER.middleware.middleware_stats.StatsMiddleware',
+    'SERVER.middleware.middleware_profil.ActiveUserMiddleware',
+
 ]
 
 ROOT_URLCONF = 'PROJECT_COVDPX.urls'
@@ -72,6 +73,22 @@ TEMPLATES = [
         },
     },
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
+
+# Number of seconds of inactivity before a user is marked offline
+USER_ONLINE_TIMEOUT = 10
+
+# Number of seconds that we will keep track of inactive users for before
+# their last seen is removed from the cache
+USER_LAST_SEEN_TIMEOUT = 60 * 60 * 24 * 7
+
 
 WSGI_APPLICATION = 'PROJECT_COVDPX.wsgi.application'
 

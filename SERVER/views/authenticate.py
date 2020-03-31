@@ -81,10 +81,10 @@ def edit(request, userId):
                 user.first_name = first_name
                 user.last_name = last_name
                 user.save()
-
-                profil = Profil.objects.get(user_id=userId)
-                profil.picture = picture
-                profil.save()
+                if picture:
+                    profil = Profil.objects.get(user_id=userId)
+                    profil.picture = picture
+                    profil.save()
                 return redirect('profil', user.id)
     else:
         form = EditForm(initial={'username': user.username , 'first_name': user.first_name, 'last_name': user.last_name})
