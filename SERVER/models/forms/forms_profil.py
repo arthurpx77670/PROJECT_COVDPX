@@ -1,4 +1,5 @@
 from django import forms
+from SERVER.models.db.db_profil import Chat
 
 
 class PostForm(forms.Form):
@@ -9,5 +10,10 @@ class PostForm(forms.Form):
 
 class CommentaryForm(forms.Form):
     text = forms.CharField(widget=forms.Textarea)
+
+
+class ChatForm(forms.Form):
+    text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chat-text'}))
+
 
 

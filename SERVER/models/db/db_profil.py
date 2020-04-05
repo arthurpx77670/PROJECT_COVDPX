@@ -47,7 +47,11 @@ class Like(models.Model):
     author = models.ForeignKey(Profil, on_delete=models.CASCADE,default=False)
 
 
-
+class Chat(models.Model):
+    sender = models.ForeignKey(Profil, on_delete=models.CASCADE, default=False, related_name="sender")
+    receiver = models.ForeignKey(Profil, on_delete=models.CASCADE, default=False,related_name="receiver")
+    text = models.TextField(null=True)
+    date = models.DateTimeField(default=timezone.now)
 
 
 # migrate db_stat

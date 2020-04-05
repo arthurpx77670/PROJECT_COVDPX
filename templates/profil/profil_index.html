@@ -5,6 +5,7 @@
 
     {#    form post #}
     {% include "./internal/profil_action_post.html" %}
+
 {% endif %}
 
 
@@ -12,7 +13,9 @@
 {% if user.is_authenticated %}
 
     {# informations #}
+
     {% include "./informations/profil_inform.html" %}
+
     {% include "./informations/profil_friends.html" %}
     {% include "./informations/profil_files.html" %}
 
@@ -20,6 +23,11 @@
     {% if request.user != user and request.user.is_authenticated %}
         {# inviations friend #}
         {% include "./external/profil_action_invita.html" %}
+
+        {# chat#}
+        {% include "./internal/profil_action_chat.html" %}
+        {% include "./informations/profil_chat.html" %}
+
     {% endif %}
 
 

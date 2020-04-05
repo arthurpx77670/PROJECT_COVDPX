@@ -1,0 +1,19 @@
+{% load static %}
+
+{% block content %}
+
+    <h4 id="count">{{ chats.count }} message avec : {{user.username }}</h4>
+
+    <ul id="talk">
+        {% for chat in chats %}
+            <br>
+            <ul>
+                <li>A : {{ chat.date.hour }}h {{ chat.date.minute }}</li>
+                <li>De : {{ chat.sender.user.username }}</li>
+                <li>Pour : {{ chat.receiver.user.username }}</li>
+                <li>{{ chat.text }}</li>
+            </ul>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

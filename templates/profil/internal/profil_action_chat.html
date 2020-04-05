@@ -1,0 +1,18 @@
+{% load static %}
+
+{% block content %}
+
+    <h4>Chatez</h4>
+    {#   write chat post #}
+    <form action="{% url 'create_chat' user.id %}" method="POST" id="chat-form" >
+        {% csrf_token %}
+        {{ Chatform.text }}
+        <div id="results"></div> <!-- errors go here -->
+        <input type="submit" value="Envoyé">
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "/js/chat.js" %}"></script>
+
+{% endblock %}

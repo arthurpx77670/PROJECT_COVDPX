@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'SERVER.apps.CovdpxConfig',
     'SERVER.models.db',
+    'jquery',
 ]
 
 MIDDLEWARE = [

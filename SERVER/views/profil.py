@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from SERVER.models.db.db_profil import Profil, Post, Commentary, Like
-from SERVER.models.forms.forms_profil import PostForm, CommentaryForm
+from SERVER.models.db.db_profil import Profil, Post, Commentary, Like, Chat
+from SERVER.models.forms.forms_profil import PostForm, CommentaryForm, ChatForm
 from django.http import HttpResponse
-
+import json
+from django.views.decorators.csrf import csrf_protect
+from django.db.models import Q
 
 def profil(request, userId):
 
@@ -12,6 +14,9 @@ def profil(request, userId):
 
     # form commentary
     Commentaryform = CommentaryForm()
+
+    # form chat
+    Chatform = ChatForm()
 
     # page user
     user = User.objects.get(id=userId)
@@ -39,6 +44,12 @@ def profil(request, userId):
         if post.file != "False":
             countFiles += 1
 
+    # all chats bettwen a couple users
+
+    chats = Chat.objects.filter(
+        (Q(sender=request.user.profil) & Q(receiver=user.profil))
+        |(Q(sender=user.profil) & Q(receiver=request.user.profil)))
+    chats = chats.order_by('-date')
 
     return render(request, "profil/profil_index.html",
                   {"user": user,
@@ -47,8 +58,10 @@ def profil(request, userId):
                    "posts": posts,
                    "Postform": Postform,
                    "Commentaryform": Commentaryform,
+                   "Chatform" : ChatForm,
                    "postsLikedRequest": postsLikedRequest,
-                   "countFiles" : countFiles
+                   "countFiles": countFiles,
+                   "chats": chats,
                    })
 
 
@@ -91,3 +104,57 @@ def like(request, postId, userId):
         like = Like.objects.create(author_id=author.id, post_id=postId)
         like.save()
     return redirect('profil',userId)
+
+
+@csrf_protect
+def create_chat(request, userId):
+    if request.method == 'POST':
+        chat_text = request.POST.get('chat_text')
+
+        user = User.objects.get(id=userId)
+        chat = Chat(text=chat_text, receiver=user.profil, sender=request.user.profil)
+        chat.save()
+
+        return HttpResponse(
+            json.dumps({"chatText" : chat.text,
+                        "chatReceiver": chat.receiver.user.username,
+                        "chatSender": chat.sender.user.username,
+                        "chatDate": chat.date,
+                        }),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
+
+
+
+# @csrf_protect
+# def refresh_chat(request, userId):
+#     if request.method == 'POST':
+#         user = User.objects.get(id=userId)
+#         lastChat = request.POST.get('lastChat')
+#
+#         chats = Chat.objects.filter(
+#             (Q(sender=request.user.profil) & Q(receiver=user.profil))
+#             | (Q(sender=user.profil) & Q(receiver=request.user.profil)))
+#         chats = chats.order_by('-date')
+#         user = User.objects.get(id=userId)
+#         chats = Chat.objects.filter()
+#
+#         return HttpResponse(
+#             # json.dumps({"chatText": chat.text,
+#             #             "chatReceiver": chat.receiver.user.username,
+#             #             "chatSender": chat.sender.user.username,
+#             #             "chatDate": chat.date,
+#             #             }),
+#             content_type="application/json"
+#         )
+#     else:
+#         return HttpResponse(
+#             json.dumps({"nothing to see": "this isn't happening"}),
+#             content_type="application/json"
+#         )
+
