@@ -1,8 +1,9 @@
 {% block content %}
     {# commentary informations#}
-    {% for commentary in post.commentary_set.all %}
-        <li>{{ commentary.text }}</li>
-        <li> par : {{ commentary.author.user.username }}</li>
-        <li>le : {{ commentary.date }}</li>
-    {% endfor %}
+    <li>{{ commentary.text }}</li>
+    <li> par : {{ commentary.author.user.username }}</li>
+    <li> pour : {{ commentary.price }}</li>
+    <li>le : {{ commentary.date }}</li>
+    <br>
+
 {% endblock %}

@@ -36,10 +36,16 @@ urlpatterns = [
 
     #profil_action
     path('login/profil?<int:userId>/invitation', profil.invitation, name='invitation'),
+    path('login/profil?<int:userId>/create_chat', profil.create_chat, name='create_chat'),
+
+    #profil post action
     path('login/profil?<int:userId>/post', profil.post, name='post'),
     path('login/profil/commentary/<int:userId>/<int:postId>', profil.commentary, name='commentary'),
+    path('login/profil/accept/<int:userId>/<int:postId>/<int:commentaryId>', profil.accept, name='accept'),
     path('login/profil/like/<int:userId>/<int:postId>', profil.like, name='like'),
-    path('login/profil?<int:userId>/create_chat', profil.create_chat, name='create_chat'),
+    path('login/profil/editPost/<int:userId>/<int:postId>', profil.editPost, name='editPost'),
+    path('login/profil/deletePost/<int:userId>/<int:postId>', profil.deletePost, name='deletePost'),
+
     # path('login/profil?<int:userId>/refresh_chat', profil.refresh_chat, name='refresh_chat'),
 
 ]

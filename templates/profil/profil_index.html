@@ -6,6 +6,12 @@
     {#    form post #}
     {% include "./internal/profil_action_post.html" %}
 
+    {#    show mission dev #}
+    {% include "./internal/profil_show_miss_dev.html" %}
+
+    {#    show mission #}
+    {% include "./internal/profil_show_miss.html" %}
+
 {% endif %}
 
 
@@ -13,10 +19,10 @@
 {% if user.is_authenticated %}
 
     {# informations #}
-
     {% include "./informations/profil_inform.html" %}
-
+    {#    friends#}
     {% include "./informations/profil_friends.html" %}
+    {#    files#}
     {% include "./informations/profil_files.html" %}
 
 
@@ -24,35 +30,62 @@
         {# inviations friend #}
         {% include "./external/profil_action_invita.html" %}
 
-        {# chat#}
+        {# write chat#}
         {% include "./internal/profil_action_chat.html" %}
+        {#  chats#}
         {% include "./informations/profil_chat.html" %}
 
     {% endif %}
 
 
-    {# posts #}
-    <h4>{{ posts.count }} Posts :</h4>
+    {# all posts #}
+    <h4>{{ countPosts }} Posts : </h4>
     <ul>
         {% for post in posts %}
-            {#   information post#}
-            {% include "./informations/profil_post.html" %}
+            {% if post.description == "Research" %}
 
-            {#  form like#}
-            {% if request.user != user and request.user.is_authenticated %}
-                {% include "./external/profil_action_like.html" %}
-            {% endif %}
+                {#   information post#}
+                {% include "./informations/profil_post.html" %}
 
-            {#  commentaries by post#}
-            <ul>
-                {#   informations commentary#}
-                {% include "./informations/profil_com.html" %}
-
-                {# form commentary #}
-                {% if request.user != user and request.user.is_authenticated %}
-                    {% include "./external/profil_action_com.html" %}
+                {#  action edit the post #}
+                {% if request.user == user and request.user.is_authenticated %}
+                    {% include "./internal/profil_action_edit_post.html" %}
                 {% endif %}
-            </ul>
+
+                {#  form like#}
+                {% if request.user != user and request.user.is_authenticated %}
+                    {% include "./external/profil_action_like.html" %}
+                {% endif %}
+
+                {# all commentaries by post#}
+                <ul>
+                    {% if post.commentary_set.all %}
+
+                        {#  filter commentary  #}
+                        <select>
+                            <option>Date</option>
+                            <option>Prix</option>
+                        </select>
+                        {% for commentary in post.commentary_set.all %}
+
+                            {#   informations commentary#}
+                            {% include "./informations/profil_com.html" %}
+
+                            {#  action form accept this commentary => mission   #}
+                            {% if user.id == request.user.id %}
+                                {% include "./internal/profil_action_acce_post.html" %}
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+
+
+                    {# form commentary #}
+                    {% if request.user != user and request.user.is_authenticated %}
+                        {% include "./external/profil_action_com.html" %}
+                    {% endif %}
+                </ul>
+            {% endif %}
         {% endfor %}
     </ul>
 

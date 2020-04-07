@@ -1,10 +1,8 @@
 {% block content %}
-
-    <h4>Soumettre un projet :</h4>
-    {#   write form post #}
-    <form method="post"  enctype="multipart/form-data" action="{% url 'post' user.id%}">
+    <h1>Editer le post</h1>
+    <form method="post" enctype="multipart/form-data" >
         {% csrf_token %}
-        {% for field in Postform %}
+        {% for field in form %}
             <p>
                 {{ field.label_tag }}<br>
                 {{ field }}
@@ -13,7 +11,6 @@
                 {% endif %}
             </p>
         {% endfor %}
-        <button type="submit">Envoyé</button>
+        <button type="submit">Modifier</button>
     </form>
-
 {% endblock %}

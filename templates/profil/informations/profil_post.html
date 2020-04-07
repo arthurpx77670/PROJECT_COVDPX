@@ -2,17 +2,20 @@
 
 {% block content %}
     {# post informations#}
+    <br>
     <li>Titre : {{ post.title }}</li>
+    <li>Prix :{{ post.price }}</li>
+    <li>Pour le :{{ post.deadline }}</li>
     <li>Contenu :{{ post.text }}</li>
     <li> Ecrit le :{{ post.date }}</li>
 
     {#  like post#}
     <li>Nombre de J'aime : {{ post.like_set.all.count}}</li>
 
-
     {#  file  #}
     {% if post.file != "False" %}
         <li> Document :</li>
         <embed src="{% static "/media/"%}{{ post.file }}" width="300px" height="400px" type="application/pdf" />
     {% endif %}
+
 {% endblock %}

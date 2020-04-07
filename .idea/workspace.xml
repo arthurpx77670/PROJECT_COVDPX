@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94b574e-22a4-46c3-87be-3cb0ebd663f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SERVER/static/js/chat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profil/informations/profil_chat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_action_chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/378a634a-a37a-4940-8691-1c62764687aa.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_action_acce_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_action_edit_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_edit_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_show_miss.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/profil/internal/profil_show_miss_dev.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/60655f44-07f5-4efe-9532-e3aec9814851.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/60655f44-07f5-4efe-9532-e3aec9814851.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERVER/models/db/db_profil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/models/db/db_profil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERVER/models/forms/forms_profil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/models/forms/forms_profil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERVER/views/profil.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/views/profil.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/external/profil_action_com.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/external/profil_action_com.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/informations/profil_chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/informations/profil_chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/informations/profil_com.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/informations/profil_com.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/informations/profil_inform.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/informations/profil_inform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/informations/profil_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/informations/profil_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil/internal/profil_action_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/internal/profil_action_post.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profil/profil_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil/profil_index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,37 +60,14 @@
         <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="db_chat: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="db_post: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="db_chat: table" type="3d80ac25:SqliteImplModel$Table" />
-        <item name="columns" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="db_chat: table" type="3d80ac25:SqliteImplModel$Table" />
-        <item name="keys" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="db_profil: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="db_profil: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="db_post: table" type="3d80ac25:SqliteImplModel$Table" />
         <item name="columns" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
     </expand>
@@ -99,15 +82,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SERVER/models/db/db_profil.py">
+        <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_edit_post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="195">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SERVER/views/authenticate.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
-                <element signature="e#473#521#0" />
-                <element signature="e#553#848#0" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_edit_post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -115,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SERVER/views/profil.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312">
-              <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+            <state relative-caret-position="93">
+              <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -125,52 +124,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SERVER/static/js/chat.js">
+        <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_com.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-              <folding>
-                <element signature="e#110#117#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_chat.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_chat.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/profil/profil_index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-360">
-              <caret line="6" column="54" lean-forward="true" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PROJECT_COVDPX/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-              <folding>
-                <element signature="e#638#670#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -224,7 +181,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="profil_basic" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="AUTO_COMMIT_ON_CHERRY_PICK" value="true" />
@@ -245,13 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/COVDPX/views/index.py" />
-        <option value="$PROJECT_DIR$/templates/profil/profil_informations.html" />
-        <option value="$PROJECT_DIR$/templates/profil/profil_auth.html" />
-        <option value="$PROJECT_DIR$/templates/authenticate/auth_login.html" />
-        <option value="$PROJECT_DIR$/db.sqlite3" />
-        <option value="$PROJECT_DIR$/COVDPX/models/forms/form_profil.py" />
-        <option value="$PROJECT_DIR$/COVDPX/views/profil.py" />
         <option value="$PROJECT_DIR$/templates/profil/profil_external.html" />
         <option value="$PROJECT_DIR$/templates/profil/external/profil_action_comment.html" />
         <option value="$PROJECT_DIR$/templates/profil/external/profil_action_invita" />
@@ -261,7 +211,6 @@
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_friends.html" />
         <option value="$PROJECT_DIR$/templates/profil/profil_inform.html" />
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_comm.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_com.html" />
         <option value="$PROJECT_DIR$/templates/profil/profil_posts.html" />
         <option value="$PROJECT_DIR$/COVDPX/views/test.py" />
         <option value="$PROJECT_DIR$/COVDPX/models/forms/forms_auth.py" />
@@ -273,12 +222,10 @@
         <option value="$PROJECT_DIR$/.idea/dbnavigator.xml" />
         <option value="$PROJECT_DIR$/manage.py" />
         <option value="$PROJECT_DIR$/templates/profil/internal/profil_show_files.html" />
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_post.html" />
         <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_auth.html" />
         <option value="$PROJECT_DIR$/SERVER/models/db/db_stats.py" />
         <option value="$PROJECT_DIR$/SERVER/models/db/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_files.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_post.html" />
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_others.html" />
         <option value="$PROJECT_DIR$/SERVER/middleware/profil.py" />
         <option value="$PROJECT_DIR$/SERVER/middleware/stats.py" />
@@ -287,15 +234,25 @@
         <option value="$PROJECT_DIR$/SERVER/middleware/middleware_stats.py" />
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_inform.html" />
         <option value="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" />
-        <option value="$PROJECT_DIR$/SERVER/models/forms/forms_profil.py" />
-        <option value="$PROJECT_DIR$/SERVER/models/db/db_profil.py" />
         <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_chat.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/templates/profil/informations/profil_chat.html" />
         <option value="$PROJECT_DIR$/SERVER/static/js/chat.js" />
-        <option value="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" />
-        <option value="$PROJECT_DIR$/SERVER/views/profil.py" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_post.html" />
+        <option value="$PROJECT_DIR$/templates/profil/external/profil_action_com.html" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/Profil_show_mission.html" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_show_miss.html" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_show_miss_dev.html" />
+        <option value="$PROJECT_DIR$/templates/profil/informations/profil_post.html" />
+        <option value="$PROJECT_DIR$/SERVER/models/db/db_profil.py" />
+        <option value="$PROJECT_DIR$/templates/profil/informations/profil_com.html" />
         <option value="$PROJECT_DIR$/templates/profil/profil_index.html" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_acce_post.html" />
+        <option value="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" />
+        <option value="$PROJECT_DIR$/SERVER/models/forms/forms_profil.py" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_edit_post.html" />
+        <option value="$PROJECT_DIR$/templates/profil/internal/profil_edit_post.html" />
+        <option value="$PROJECT_DIR$/SERVER/views/profil.py" />
       </list>
     </option>
   </component>
@@ -346,27 +303,7 @@
               <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
               <item name="SERVER" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
-              <item name="SERVER" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
               <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
-              <item name="SERVER" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
-              <item name="SERVER" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
@@ -383,7 +320,20 @@
               <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="authenticate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="profil" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="profil" type="462c0819:PsiDirectoryNode" />
+              <item name="external" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
@@ -589,7 +539,8 @@
       <workItem from="1585402204303" duration="20218000" />
       <workItem from="1585562405771" duration="34352000" />
       <workItem from="1585988631063" duration="6195000" />
-      <workItem from="1585998801555" duration="24748000" />
+      <workItem from="1585998801555" duration="36365000" />
+      <workItem from="1586259764391" duration="14406000" />
     </task>
     <servers />
   </component>
@@ -605,18 +556,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169387000" />
+    <option name="totallyTimeSpent" value="195410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.13392363" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.20420587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.11594203" side_tool="true" weight="0.12562259" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997233" visible="true" weight="0.3736501" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.3736501" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.032397408" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -624,8 +575,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.36637932" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3261339" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3261339" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.3261339" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.36422414" />
@@ -637,12 +588,12 @@
       <window_info anchor="right" id="DB Browser" order="5" show_stripe_button="false" weight="0.32982844" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.19977863" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.11400111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.11594203" side_tool="true" weight="0.12562259" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997233" visible="true" weight="0.3736501" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.3736501" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.032397408" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -650,8 +601,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.36637932" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32721382" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3261339" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.3261339" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.36422414" />
@@ -673,181 +624,7 @@
     <SUITE FILE_PATH="coverage/PROJECT_COVDPX$user.coverage" NAME="user Coverage Results" MODIFIED="1585179558680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/COVDPX/models" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///data/Downloads/backtesting/graph/templates/graph/pairs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/static/Screenshot_from_2020-03-24_17-13-27.png" />
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/forms_auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index/index_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_com.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/db_profil" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/db_post" />
-    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_auth.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/sqlite_master" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/sqlite_sequence" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/django_session" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/django_content_type" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/django_admin_log" />
-    <entry file="das://378a634a-a37a-4940-8691-1c62764687aa/schema/main/table/django_migrations" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/60655f44-07f5-4efe-9532-e3aec9814851/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/db_stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_files.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_page">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="74e5bc2a-5fe2-4756-bcbe-5b7780878ae0">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="15" lean-forward="true" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/auth_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="74e5bc2a-5fe2-4756-bcbe-5b7780878ae0">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="13" column="19" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/contrib/auth/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="133" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_others.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/auth_login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/views/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PROJECT_COVDPX/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/cache/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/core/cache/backends/memcached.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="145" column="64" selection-start-line="145" selection-start-column="48" selection-end-line="145" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/middleware/profil.py" />
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/auth_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="53" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/views/authenticate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/middleware/middleware_profil.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -874,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="83" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/jquery/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -888,25 +658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/forms_profil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_profil">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="733db082-3cc8-4aa3-9a0d-edd7906f89d5">
-          <filtering>
-            <filter text="" />
-          </filtering>
         </state>
       </provider>
     </entry>
@@ -919,10 +670,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/utils/dateparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0016_chat_date.py" />
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0014_auto_20200405_1812.py" />
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0013_auto_20200405_1812.py" />
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0011_auto_20200405_1808.py" />
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0012_remove_post_deadline.py" />
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0005_post_price.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0004_auto_20200405_1040.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_like">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="733db082-3cc8-4aa3-9a0d-edd7906f89d5">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/views/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_page">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="733db082-3cc8-4aa3-9a0d-edd7906f89d5">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="39" selection-start-column="39" selection-end-column="39" />
+          <folding>
+            <element signature="e#110#117#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="329" selection-start-line="329" selection-end-line="329" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0006_auto_20200405_1834.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0007_post_deadline.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0009_auto_20200407_1323.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/Profil_show_mission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0009_mission.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0008_commentary_price.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/auth_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="3545d165-f72e-4f04-807b-c01ba126346a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_profil">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="3545d165-f72e-4f04-807b-c01ba126346a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_commentary">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="3545d165-f72e-4f04-807b-c01ba126346a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_mission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="3545d165-f72e-4f04-807b-c01ba126346a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_show_miss_dev.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_show_miss.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/external/profil_action_com.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/models/db/db_profil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="363">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
             <element signature="e#473#521#0" />
@@ -931,51 +842,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_chat.html">
+    <entry file="file://$PROJECT_DIR$/templates/profil/profil_index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="168">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/profil_index.html">
+    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_com.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="6" column="54" lean-forward="true" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_acce_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/forms_auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="13" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/authenticate/auth_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="14" lean-forward="true" selection-end-line="19" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/forms_profil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="61" lean-forward="true" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PROJECT_COVDPX/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="36" column="18" lean-forward="true" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        <state relative-caret-position="393">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
             <element signature="e#638#670#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/static/js/chat.js">
+    <entry file="das://60655f44-07f5-4efe-9532-e3aec9814851/schema/main/table/db_post">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="3545d165-f72e-4f04-807b-c01ba126346a">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_auth.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="210">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="54" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_action_edit_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/views/authenticate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="75" column="42" lean-forward="true" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
           <folding>
-            <element signature="e#110#117#1" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profil/informations/profil_chat.html">
+    <entry file="file://$PROJECT_DIR$/templates/profil/internal/profil_edit_post.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="105">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/views/profil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="111" column="32" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
+        <state relative-caret-position="93">
+          <caret line="174" column="23" selection-start-line="174" selection-start-column="23" selection-end-line="174" selection-end-column="23" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
