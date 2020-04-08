@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from SERVER.views import index
-from SERVER.views import authenticate, profil
+from SERVER.views import authenticate, profile, wall, post
 from django.urls import path
 
 
@@ -24,28 +24,32 @@ urlpatterns = [
     path('', index.home),
 
     #form_auth
-    path('registration/', authenticate.registration, name='registration'),
+    path('registrate/', authenticate.registrate, name='registrate'),
     path('login/', authenticate.login_, name='login'),
     path('login/forget', authenticate.forget, name='forget'),
     path('login/forget/reboot?<int:userId>', authenticate.reboot, name='reboot'),
 
-    #auth_profil
-    path('login/profil?<int:userId>', profil.profil, name='profil'),
-    path('login/profil/logout', authenticate.logout_, name='logout'),
-    path('login/profil?<int:userId>/edit', authenticate.edit, name='edit'),
+    #authenticate
+    path('login/profile?<int:userId>', profile.profile, name='profile'),
+    path('login/profile/logout', authenticate.logout_, name='logout'),
+    path('login/profile?<int:userId>/edit', authenticate.edit, name='edit'),
 
-    #profil_action
-    path('login/profil?<int:userId>/invitation', profil.invitation, name='invitation'),
-    path('login/profil?<int:userId>/create_chat', profil.create_chat, name='create_chat'),
+    #profile
+    path('login/profile?<int:userId>/invitation', profile.invite, name='invitation'),
+    path('login/profile?<int:userId>/create_chat', profile.chat, name='create_chat'),
 
-    #profil post action
-    path('login/profil?<int:userId>/post', profil.post, name='post'),
-    path('login/profil/commentary/<int:userId>/<int:postId>', profil.commentary, name='commentary'),
-    path('login/profil/accept/<int:userId>/<int:postId>/<int:commentaryId>', profil.accept, name='accept'),
-    path('login/profil/like/<int:userId>/<int:postId>', profil.like, name='like'),
-    path('login/profil/editPost/<int:userId>/<int:postId>', profil.editPost, name='editPost'),
-    path('login/profil/deletePost/<int:userId>/<int:postId>', profil.deletePost, name='deletePost'),
 
-    # path('login/profil?<int:userId>/refresh_chat', profil.refresh_chat, name='refresh_chat'),
+    #post
+    path('login/profile?<int:userId>/post', post.post, name='post'),
+    path('login/profile/comment/<int:userId>/<int:postId>', post.comment, name='comment'),
+    path('login/profile/accept/<int:userId>/<int:postId>/<int:commentaryId>', post.accept, name='accept'),
+    path('login/profile/like/<int:userId>/<int:postId>', post.like, name='like'),
+    path('login/profile/edit/<int:userId>/<int:postId>', post.edit, name='edit'),
+    path('login/profile/delete/<int:userId>/<int:postId>', post.delete, name='delete'),
+
+    #wall
+    path('login/wall', wall.wall, name='wall'),
+
+    # path('login/profile?<int:userId>/refresh_chat', profile.refresh_chat, name='refresh_chat'),
 
 ]

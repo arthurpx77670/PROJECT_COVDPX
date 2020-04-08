@@ -1,0 +1,10 @@
+{% block content %}
+
+    <h1>accueil</h1>
+        <a href="{% url 'login' %}" class="top-menu">
+            <span class="glyphicon glyphicon-plus">Connexion</span>
+        </a>
+        <a href="{% url 'registrate' %}" class="top-menu">
+             <span class="glyphicon glyphicon-plus">Inscription</span>
+        </a>
+{% endblock %}

@@ -1,0 +1,57 @@
+{#user connect#}
+{% if request.user.is_authenticated %}
+    {#    action auth#}
+    {% include "./../profile/action/authenticate.html" %}
+
+    <h2>Actualité</h2>
+
+    {#    all posts#}
+    <h4>{{ postsCount }} Posts : </h4>
+    <ul>
+        {% for post in posts %}
+            {% if post.author.user in request.user.profile.friends.all %}
+                <h4>Votre amis : {{ post.author.user.username }}</h4>
+            {% else %}
+                {% for friend in request.user.profile.friends.all %}
+                    {% for like in friend.profile.like_set.all %}
+                        {% if like in post.like_set.all %}
+                            <h4>Votre amis : {{ friend.profile.user.username }} à partager le post de : {{ post.author.user.username }}</h4>
+                        {% endif %}
+                    {% endfor %}
+
+
+                {% endfor %}
+
+            {% endif %}
+
+            {# information post#}
+            {% include "./../post/show/posts.html" %}
+
+            form like
+            {% include "./../post/action/like.html" %}
+
+            {# all commentaries by post#}
+            <ul>
+                {% if post.commentary_set.all %}
+
+                    filter commentary
+                    <select>
+                        <option>Date</option>
+                        <option>Prix</option>
+                    </select>
+
+                    {#  informations commentary#}
+                    {% for commentary in post.commentary_set.all %}
+                        {% include "./../post/show/commentaries.html" %}
+                    {% endfor %}
+
+                {% endif %}
+
+                {#   form commentary#}
+                {% include "./../post/action/comment.html" %}
+
+            </ul>
+        {% endfor %}
+    </ul>
+
+{% endif %}

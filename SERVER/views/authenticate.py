@@ -1,10 +1,10 @@
-from SERVER.models.forms.forms_auth import loginForm
+from SERVER.models.forms.authenticate import loginForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
-from SERVER.models.forms.forms_auth import RegistrationForm, EditForm, RebootPswForm, ForgetPswForm
+from SERVER.models.forms.authenticate import RegistrationForm, EditForm, RebootPswForm, ForgetPswForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-from SERVER.models.db.db_profil import Profil
+from SERVER.models.db.profile import Profile
 
 
 def login_(request):
@@ -17,12 +17,12 @@ def login_(request):
             user = authenticate(username=username, password=password)  # Nous vérifions si les données sont correctes
             if user:  # Si l'objet renvoyé n'est pas None
                 login(request, user)  # nous connectons l'utilisateur
-                return redirect('profil', user.id)
+                return redirect('profile', user.id)
             else: # sinon une erreur sera affichée
                 error = True
     else:
         form = loginForm()
-    return render(request, 'authenticate/auth_login.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/login.html', {'form': form, 'error': error})
 
 
 def forget(request):
@@ -42,7 +42,7 @@ def forget(request):
                 error = True
     else:
         form = ForgetPswForm()
-    return render(request, 'authenticate/auth_forget.html', {'form': form, 'error': error})
+    return render(request, 'authenticate/forget.html', {'form': form, 'error': error})
 
 
 def reboot(request,userId):
@@ -56,13 +56,12 @@ def reboot(request,userId):
             return redirect('login')
     else:
         form = RebootPswForm()
-    return render(request, 'authenticate/auth_reboot.html', {'form':form})
+    return render(request, 'authenticate/reboot.html', {'form':form})
 
 
 def logout_(request):
     logout(request)
     return redirect('/')
-from django.http import HttpResponse
 
 
 def edit(request, userId):
@@ -82,16 +81,19 @@ def edit(request, userId):
                 user.last_name = last_name
                 user.save()
                 if picture:
-                    profil = Profil.objects.get(user_id=userId)
-                    profil.picture = picture
-                    profil.save()
-                return redirect('profil', user.id)
+                    profile = Profile.objects.get(user_id=userId)
+                    profile.picture = picture
+                    profile.save()
+                return redirect('profile', user.id)
     else:
-        form = EditForm(initial={'username': user.username , 'first_name': user.first_name, 'last_name': user.last_name})
-    return render(request, 'authenticate/auth_edit.html', {'form': form})
+        form = EditForm(initial={'username': user.username ,
+                                 'first_name': user.first_name,
+                                 'last_name': user.last_name})
+
+    return render(request, 'authenticate/edit.html', {'form': form})
 
 
-def registration(request):
+def registrate(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -102,11 +104,11 @@ def registration(request):
             else:
                 form.save()
                 user = User.objects.get(username=username)
-                Profil.objects.create(user=user)
+                Profile.objects.create(user=user)
                 return redirect('../login')
     else:
         form = RegistrationForm()
-    return render(request, 'authenticate/auth_regist.html', {'form': form})
+    return render(request, 'authenticate/registrate.html', {'form': form})
 
 
 

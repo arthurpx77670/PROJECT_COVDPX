@@ -1,0 +1,90 @@
+{# user connect #}
+{% if request.user.is_authenticated %}
+    {#   action auth #}
+    {% include "./action/authenticate.html" %}
+
+    {#    form post #}
+    {% include "./../post/action/post.html" %}
+
+    {#    show mission dev #}
+    {% include "./show/missions_dev.html" %}
+
+    {#    show mission #}
+    {% include "./show/missions.html" %}
+
+{% endif %}
+
+
+{# user #}
+{% if user.is_authenticated %}
+
+    {# informations #}
+    {% include "./show/informations.html" %}
+    {#    friends#}
+    {% include "./show/friends.html" %}
+
+    {% if request.user != user and request.user.is_authenticated %}
+        {# inviations friend #}
+        {% include "./action/invite.html" %}
+
+        {# write chat#}
+        {% include "./action/chat.html" %}
+        {#  chats#}
+        {% include "./show/chats.html" %}
+
+    {% endif %}
+
+
+    {# all posts #}
+    <h4>{{ posts.count }} Posts : </h4>
+    <ul>
+        {% for post in posts %}
+            {#   information post#}
+            {% include "./../post/show/posts.html" %}
+
+            {#  action edit the post #}
+            {% if request.user == user and request.user.is_authenticated %}
+                {% include "./../post/action/delete_or_edit.html" %}
+            {% endif %}
+
+            {#  form like#}
+            {% if request.user != user and request.user.is_authenticated %}
+                {% include "./../post/action/like.html" %}
+            {% endif %}
+
+            {# all commentaries by post#}
+            <ul>
+                {% if post.commentary_set.all %}
+
+                    {#  filter commentary  #}
+                    <select>
+                        <option>Date</option>
+                        <option>Prix</option>
+                    </select>
+                    {% for commentary in post.commentary_set.all %}
+
+                        {#   informations commentary#}
+                        {% include "./../post/show/commentaries.html" %}
+
+                        {#  action form accept this commentary => mission   #}
+                        {% if user.id == request.user.id %}
+                            {% include "./../post/action/accept.html" %}
+                        {% endif %}
+
+                    {% endfor %}
+                {% endif %}
+
+
+                {# form commentary #}
+                {% if request.user != user and request.user.is_authenticated %}
+                    {% include "./../post/action/comment.html" %}
+                {% endif %}
+            </ul>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+
+{# search user  #}
+{% include "./show/others_users.html" %}

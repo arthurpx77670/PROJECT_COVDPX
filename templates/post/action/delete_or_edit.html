@@ -1,0 +1,14 @@
+{% block content %}
+    {#   select this post => delete/edit#}
+    <li>
+        <a href="{% url 'edit' user.id post.id  %}" class="top-menu">
+            <span class="glyphicon glyphicon-plus">Editer</span>
+        </a>
+    </li>
+    <li>
+        <form method="post" action="{% url "delete" user.id post.id %}">
+            {% csrf_token %}
+            <button>Delete</button>
+        </form>
+    </li>
+{% endblock %}

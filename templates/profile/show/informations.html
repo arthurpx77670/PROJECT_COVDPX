@@ -1,0 +1,20 @@
+{% load static %}
+{% block content %}
+
+    {#    informations#}
+    <h2>Informations de {{ user.username }}</h2>
+    {% if user.profile.picture.name != "False" %}
+        <img src="{% static "/media/"%}{{ user.profile.picture.url }}", width='50', height='50', alt="Pas de photo"/>
+    {% endif %}
+    {% if user.profile.online %} En ligne {% else %} Hors ligne {% endif %}
+    {% if user.profile.last_seen and user.profile.online == False %} depuis : {{ user.profile.last_seen|timesince }}{% endif %}
+    <ul>
+        <li>
+            Prénom : {{ user.first_name }}
+        </li>
+        <li>
+            Nom : {{ user.last_name }}
+        </li>
+    </ul>
+
+{% endblock %}

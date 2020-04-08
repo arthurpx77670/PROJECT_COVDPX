@@ -1,0 +1,20 @@
+{% load static %}
+{% block content %}
+    {# mission dev informations#}
+    <h4>{{ postsMissionDevRequest.count }} missions à developer : </h4>
+    {% for post in postsMissionDevRequest %}
+        {% if post.mission.description == False %}
+            <li>titre {{ post.mission.proposition.title }}</li>
+            <li>contenu {{post.mission.proposition.text }}</li>
+            <li>pour {{ post.mission.proposition.author.user.username }}</li>
+            <li>gain : {{ post.mission.accept.price }}</li>
+            <li>date de rendu : {{ post.mission.proposition.deadline }}</li>
+
+            {% if post.mission.proposition.file != "False" %}
+                <li> Document :</li>
+                <embed src="{% static "/media/"%}{{ post.mission.proposition.file }}" width="300px" height="400px" type="application/pdf" />
+            {% endif %}
+        {% endif %}
+        <br>
+    {% endfor %}
+{% endblock %}

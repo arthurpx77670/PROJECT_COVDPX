@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'SERVER.apps.CovdpxConfig',
     'SERVER.models.db',
     'jquery',
 ]
@@ -50,8 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'SERVER.middleware.middleware_stats.StatsMiddleware',
-    'SERVER.middleware.middleware_profil.ActiveUserMiddleware',
+    'SERVER.middleware.stats.StatsMiddleware',
+    'SERVER.middleware.profile.ActiveUserMiddleware',
 
 ]
 

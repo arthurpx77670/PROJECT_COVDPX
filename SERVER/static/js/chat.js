@@ -6,7 +6,7 @@ $('#chat-form').on('submit',function(event){
 
 function create_chat() {
     $.ajax({
-        url : window.location.href+"/create_chat", // the endpoint
+        url : window.location.href+"/chat", // the endpoint
         type : "POST", // http method
         data : {
             chat_text : $('#chat-text').val(),
