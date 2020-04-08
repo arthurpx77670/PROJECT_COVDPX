@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SERVER.models.db',
+
     'jquery',
 ]
 
@@ -140,9 +141,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
-
-
 
 # manage file
 MEDIA_ROOT = os.path.join(BASE_DIR, 'SERVER/static/media/')
