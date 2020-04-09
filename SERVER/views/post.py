@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from SERVER.models.db.stats import Page
 from SERVER.models.db.profile import Profile
-from SERVER.models.db.post import Post, Commentary, Like, Mission
+from SERVER.models.db.post import Post, Commentary, Like
+from SERVER.models.db.mission import Mission
 from SERVER.models.forms.post import PostForm, CommentaryForm
 
 

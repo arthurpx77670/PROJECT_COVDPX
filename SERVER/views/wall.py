@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from SERVER.models.db.post import Like
 from SERVER.models.forms.post import CommentaryForm
-from django.db.models import Q
 
 
 def wall(request):

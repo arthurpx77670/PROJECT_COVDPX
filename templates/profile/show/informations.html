@@ -15,6 +15,16 @@
         <li>
             Nom : {{ user.last_name }}
         </li>
+        {% if averageMark != 0 %}
+            <li>
+                Note : {{ averageMark }}
+            </li>
+        {% endif %}
+        {% if xp != 0 %}
+            <li>
+                xp : {{ averageMark }}
+            </li>
+        {% endif %}
     </ul>
 
 {% endblock %}

@@ -10,7 +10,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=False)
     friends = models.ManyToManyField(User, related_name="friends")
     picture = models.ImageField(upload_to="picture/", default=False)
-    mark = models.IntegerField(null=True)
     xp = models.IntegerField(null=True)
 
     def last_seen(self):

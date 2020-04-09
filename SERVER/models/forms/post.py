@@ -18,4 +18,10 @@ class ChatForm(forms.Form):
     text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chat-text'}))
 
 
+class DepositForm(forms.Form):
+    file = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': False}), required=True)
 
+
+class OpinionForm(forms.Form):
+    opinion = forms.CharField(widget=forms.Textarea, required=True)
+    mark = forms.IntegerField(min_value=0, max_value=20, widget=forms.NumberInput, required=True)

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from SERVER.views import index
-from SERVER.views import authenticate, profile, wall, post
+from SERVER.views import authenticate, profile, wall, post, mission
 from django.urls import path
 
 
@@ -36,8 +36,8 @@ urlpatterns = [
 
     #profile
     path('login/profile?<int:userId>/invitation', profile.invite, name='invitation'),
-    path('login/profile?<int:userId>/create_chat', profile.chat, name='create_chat'),
-
+    path('login/profile?<int:userId>/chat', profile.chat, name='chat'),
+    #path('login/profile?<int:userId>/refresh_chat', profile.refresh_chat, name='refresh_chat'),
 
     #post
     path('login/profile?<int:userId>/post', post.post, name='post'),
@@ -50,6 +50,10 @@ urlpatterns = [
     #wall
     path('login/wall', wall.wall, name='wall'),
 
-    # path('login/profile?<int:userId>/refresh_chat', profile.refresh_chat, name='refresh_chat'),
+    #mission
+    # path('login/cancel?<int:missionId>', mission.cancel, name='cancel'),
+    path('login/deposit?<int:missionId>', mission.deposit, name='deposit'),
+    path('login/opinion?<int:resultId>', mission.opinion, name='opinion'),
+
 
 ]

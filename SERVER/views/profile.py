@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from SERVER.models.db.profile import Profile, Chat
 from SERVER.models.db.post import Post, Commentary, Like
 from SERVER.models.forms.post import PostForm, CommentaryForm, ChatForm
+from SERVER.models.db.mission import Result, Mission
 from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_protect
@@ -32,9 +33,30 @@ def profile(request, userId):
         # request
         profileRequest = Profile.objects.get(user_id=userRequest)
         # Commentary with mission dev request
-        postsMissionDevRequest = Commentary.objects.filter(description=True, author=profileRequest)
+        commentaryMissionDevRequest = Commentary.objects.filter(description=True, author=profileRequest)
+
         # posts with mission request
         postsMissionRequest = Post.objects.filter(description=True, author=profileRequest)
+
+        xp = 0
+        xpSize = 0
+        for commentary in Commentary.objects.filter(description=True, author=profile):
+            if commentary.mission.description == True:
+                xpSize = + 1
+                xp = xp + commentary.price
+        if xpSize != 0:
+            xp = xp / xpSize
+
+
+        # average mark user
+        averageMark = 0
+        averageMarkSize = 0
+        for commentary in Commentary.objects.filter(description=True, author=profile):
+            if commentary.mission.description == True:
+                averageMarkSize =+ 1
+                averageMark = averageMark + commentary.mission.result.mark
+        if averageMarkSize !=0:
+            averageMark = averageMark/averageMarkSize
 
         # view on the other user
         if (userId != request.user.id):
@@ -72,8 +94,10 @@ def profile(request, userId):
                            "posts": posts,
                            "chats": chats,
                            "postsUserLikedRequest": postsUserLikedRequest,
-                           "postsMissionDevRequest": postsMissionDevRequest,
+                           "commentaryMissionDevRequest": commentaryMissionDevRequest,
                            "postsMissionRequest":postsMissionRequest,
+                           "averageMark":averageMark,
+                           "xp":xp
                            })
 
         return render(request, "profile/index.html",
@@ -83,8 +107,10 @@ def profile(request, userId):
                        "user": user,
                        "friends": friends,
                        "posts": posts,
-                       "postsMissionDevRequest": postsMissionDevRequest,
+                       "commentaryMissionDevRequest": commentaryMissionDevRequest,
                        "postsMissionRequest":postsMissionRequest,
+                       "averageMark":averageMark,
+                       "xp":xp
                        })
 
 
@@ -102,7 +128,7 @@ def chat(request, userId):
         chat_text = request.POST.get('chat_text')
 
         user = User.objects.get(id=userId)
-        chat = Chat(text=chat_text, receiver=user.profil, sender=request.user.profile)
+        chat = Chat(text=chat_text, receiver=user.profile, sender=request.user.profile)
         chat.save()
 
         return HttpResponse(

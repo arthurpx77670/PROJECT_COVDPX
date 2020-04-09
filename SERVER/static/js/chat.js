@@ -1,10 +1,10 @@
 $('#chat-form').on('submit',function(event){
     event.preventDefault();
     console.log("form submitted!")  // sanity check
-    create_chat();
+    chat();
 });
 
-function create_chat() {
+function chat() {
     $.ajax({
         url : window.location.href+"/chat", // the endpoint
         type : "POST", // http method
