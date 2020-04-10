@@ -39,14 +39,10 @@ def profile(request, userId):
         postsMissionRequest = Post.objects.filter(description=True, author=profileRequest)
 
         xp = 0
-        xpSize = 0
         for commentary in Commentary.objects.filter(description=True, author=profile):
             if commentary.mission.description == True:
                 xpSize = + 1
                 xp = xp + commentary.price
-        if xpSize != 0:
-            xp = xp / xpSize
-
 
         # average mark user
         averageMark = 0
@@ -57,6 +53,13 @@ def profile(request, userId):
                 averageMark = averageMark + commentary.mission.result.mark
         if averageMarkSize !=0:
             averageMark = averageMark/averageMarkSize
+
+
+        # user follow request
+        usersfriends = User.objects.filter(friends=request.user.profile)
+        friendsCount =  usersfriends.count()
+
+
 
         # view on the other user
         if (userId != request.user.id):
@@ -97,7 +100,8 @@ def profile(request, userId):
                            "commentaryMissionDevRequest": commentaryMissionDevRequest,
                            "postsMissionRequest":postsMissionRequest,
                            "averageMark":averageMark,
-                           "xp":xp
+                           "xp":xp,
+                           "friendsCount":friendsCount
                            })
 
         return render(request, "profile/index.html",
@@ -110,7 +114,8 @@ def profile(request, userId):
                        "commentaryMissionDevRequest": commentaryMissionDevRequest,
                        "postsMissionRequest":postsMissionRequest,
                        "averageMark":averageMark,
-                       "xp":xp
+                       "xp":xp,
+                       "friendsCount": friendsCount
                        })
 
 

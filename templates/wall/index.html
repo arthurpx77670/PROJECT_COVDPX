@@ -1,11 +1,11 @@
 {#user connect#}
 {% if request.user.is_authenticated %}
-    {#    action auth#}
+    {#  action auth#}
     {% include "./../profile/action/authenticate.html" %}
 
     <h2>Actualité</h2>
 
-    {#    all posts#}
+    {#  all posts#}
     <h4>{{ postsCount }} Posts : </h4>
     <ul>
         {% for post in posts %}
@@ -18,10 +18,7 @@
                             <h4>Votre amis : {{ friend.profile.user.username }} à partager le post de : {{ post.author.user.username }}</h4>
                         {% endif %}
                     {% endfor %}
-
-
                 {% endfor %}
-
             {% endif %}
 
             {# information post#}
@@ -33,8 +30,7 @@
             {# all commentaries by post#}
             <ul>
                 {% if post.commentary_set.all %}
-
-                    filter commentary
+                    {# filter commentary#}
                     <select>
                         <option>Date</option>
                         <option>Prix</option>
@@ -44,10 +40,9 @@
                     {% for commentary in post.commentary_set.all %}
                         {% include "./../post/show/commentaries.html" %}
                     {% endfor %}
-
                 {% endif %}
 
-                {#   form commentary#}
+                {#  form commentary#}
                 {% include "./../post/action/comment.html" %}
 
             </ul>

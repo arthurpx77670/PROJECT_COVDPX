@@ -1,11 +1,11 @@
 {% block content %}
     {#   invitation friend #}
     {% if user in request.user.profile.friends.all %}
-        <p>Vous suivez cet utilisateur !</p>
+        <div class="check">Abonné</div>
     {% else %}
         <form method="post" action="{% url 'invitation' user.id %}">
             {% csrf_token %}
-            <input type="submit" value="Invitation" />
+            <button type="submit" >Suivre</button>
         </form>
     {% endif %}
 

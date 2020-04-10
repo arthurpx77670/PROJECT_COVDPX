@@ -1,30 +1,117 @@
 {% load static %}
 {% block content %}
+    <div id="profile" class="container">
+        <div class="row">
+            <div id="card" class="col-sm-4">
+                {% if user.profile.picture.name != "False" %}
+                    <img class="picture" src="{% static "/media/"%}{{ user.profile.picture.url }}", alt="Pas de photo"/>
+                {% endif %}
+                <h1>{{ user.username}}</h1>
+                <p class="titleProfile">
+                    {% if user.profile.online %} En ligne {% else %} Hors ligne {% endif %}
+                    {% if user.profile.last_seen and user.profile.online == False %} depuis : {{ user.profile.last_seen|timesince }}{% endif %}
+                </p>
+                <div class="info">
+                    <p>Prénom : {{ user.first_name }}</p>
+                    <p>Nom : {{ user.last_name }}</p>
 
-    {#    informations#}
-    <h2>Informations de {{ user.username }}</h2>
-    {% if user.profile.picture.name != "False" %}
-        <img src="{% static "/media/"%}{{ user.profile.picture.url }}", width='50', height='50', alt="Pas de photo"/>
-    {% endif %}
-    {% if user.profile.online %} En ligne {% else %} Hors ligne {% endif %}
-    {% if user.profile.last_seen and user.profile.online == False %} depuis : {{ user.profile.last_seen|timesince }}{% endif %}
-    <ul>
-        <li>
-            Prénom : {{ user.first_name }}
-        </li>
-        <li>
-            Nom : {{ user.last_name }}
-        </li>
-        {% if averageMark != 0 %}
-            <li>
-                Note : {{ averageMark }}
-            </li>
-        {% endif %}
-        {% if xp != 0 %}
-            <li>
-                xp : {{ averageMark }}
-            </li>
-        {% endif %}
-    </ul>
+                </div>
+            </div>
 
+            <div id="plus" class="col-sm-8">
+                <div class="row">
+                    {% if request.user.is_authenticated  and request.user == user %}
+                        <a href="{% url 'edit' request.user.id %}"><button>Modifier</button></a>
+                    {% endif %}
+                    {% if request.user != user and request.user.is_authenticated %}
+                        {# button invite  #}
+                        {% include "./../action/invite.html" %}
+                        <button>Discuter</button>
+                    {% endif %}
+                </div>
+
+                <div id="bar" class="row">
+                    {% if xp != 0 %}
+                        <div class="col-sm-1">XP :</div>
+                        <div class="col-sm-1">1</div>
+                        <div class="col-sm-9">
+                            <div id="myProgress">
+                                <div id="myBar">
+                                    {{ averageMark }}/200
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">2</div>
+                    {% endif %}
+                </div>
+
+
+
+                <div class="row">
+                    {% if averageMark != 0 %}
+                        <div class="column">
+                            <div class="card">
+                                <p><i class="fa fa-user"></i></p>
+                                <h3>
+                                    {{ averageMark }}/20
+                                </h3>
+                                <p>Note</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="column">
+                        <div class="card">
+                            <p><i class="fa fa-user"></i></p>
+                            <h3>{{ friends.count }}</h3>
+                            <p>Abonnement</p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <p><i class="fa fa-user"></i></p>
+                            <h3>{{ friendsCount }}</h3>
+                            <p>Abonnés</p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <p><i class="fa fa-check"></i></p>
+                            <h3>{{ commentaryMissionDevRequest.count }}</h3>
+                            <p>Projets déve</p>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="card">
+                            <p><i class="fa fa-check"></i></p>
+                            <h3>{{ posts.count }}</h3>
+                            <p>Projets prop</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div id="friends" class="col-sm-12">
+                {% for friend in friends %}
+                    <div class="chip">
+                        {% if friend.profile.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{ user.profile.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        <a href="{% url 'profile' friend.id %}" class="top-menu">
+                            {{friend.username}}
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}

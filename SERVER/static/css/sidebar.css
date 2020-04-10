@@ -1,0 +1,128 @@
+/*''''''''''''''''''''''''''''''verticale navabar'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''*/
+
+/* The side navigation menu */
+.sidebar {
+    padding: 0;
+    width: 150px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-left: 10px;
+
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    margin: 12px;
+    text-align: left;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+
+}
+
+/* Active/current link */
+.sidebar a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sidebar a.active:hover{
+    background-color: #45a049;
+    text-decoration: none;
+}
+
+
+
+/* The subnavigation menu (double boutton)*/
+.subnav {
+    overflow: hidden;
+}
+
+/* Subnav button */
+.subnav  {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    line-height: 25px;
+
+}
+
+.subnavbtn  {
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    margin: 12px;
+    text-align: left;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    border: none;
+    background-color: inherit;
+}
+
+/* Add a red background color to navigation links on hover */
+.sidebar a:hover:not(.active), .subnav:hover .subnavbtn {
+    background-color: #ddd;
+    text-decoration: none;
+    color: black;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: #4CAF50;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+
+/*content outside navbars*/
+.content {
+    text-align: left;
+    margin-top: 110px;
+}
+
+/*On screens that are less than 700px wide, make the sidebar into a topbar*/
+@media screen and (max-width: 750px) {
+    .sidebar {
+        margin-top: 145px;
+        width: 20%;
+    }
+    .content{
+        margin-left: 130px;
+    }
+
+    .sidebar a {
+        text-align: center;
+        float: none;
+        display: block;
+    }
+}

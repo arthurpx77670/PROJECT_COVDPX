@@ -2,29 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a94b574e-22a4-46c3-87be-3cb0ebd663f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SERVER/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SERVER/models/db/mission.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/mission/action/deposit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/mission/action/opinion.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/content.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/headerbar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/post.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/css/sidebar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/js/jQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SERVER/static/js/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/models/db/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/models/db/post.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/models/db/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/models/db/profile.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERVER/models/forms/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/models/forms/post.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/static/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/static/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/views/mission.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/views/mission.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/views/post.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/views/post.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SERVER/views/profile.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/views/profile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SERVER/views/wall.py" beforeDir="false" afterPath="$PROJECT_DIR$/SERVER/views/wall.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mission/show/develop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mission/show/develop.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mission/show/proposed.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mission/show/proposed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post/action/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post/action/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/action/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/action/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/action/invite.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/action/invite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile/show/informations.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/show/informations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/show/missions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile/show/missions_dev.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/wall/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wall/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,6 +129,21 @@
         <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="db_profile_friends: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="db_profile_friends: table" type="3d80ac25:SqliteImplModel$Table" />
+        <item name="columns" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
         <item name="db_result: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
       <path>
@@ -154,25 +166,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SERVER/views/mission.py">
+        <entry file="file://$PROJECT_DIR$/templates/profile/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SERVER/views/profile.py">
+        <entry file="file://$PROJECT_DIR$/SERVER/static/css/profile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="330">
+              <caret line="154" column="21" selection-start-line="154" selection-start-column="21" selection-end-line="154" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -180,32 +186,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/profile/show/informations.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="255">
+              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SERVER/models/db/profile.py">
+        <entry file="file://$PROJECT_DIR$/templates/profile/action/invite.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="15">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SERVER/views/profile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SERVER/models/db/mission.py">
+        <entry file="file://$PROJECT_DIR$/templates/mission/show/develop.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -215,9 +227,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
+        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -241,6 +254,7 @@
       <find>Profil</find>
       <find>Profile</find>
       <find>profil</find>
+      <find>fr</find>
     </findStrings>
     <replaceStrings>
       <replace>connection</replace>
@@ -285,21 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_edit_post.html" />
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_edit_post.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_friends.html" />
-        <option value="$PROJECT_DIR$/templates/profil/external/profil_action_invita.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_inform.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_post.html" />
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_show_miss.html" />
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_show_miss_dev.html" />
-        <option value="$PROJECT_DIR$/templates/profil/external/profil_action_like.html" />
-        <option value="$PROJECT_DIR$/templates/profil/internal/profil_action_auth.html" />
-        <option value="$PROJECT_DIR$/templates/profil/informations/profil_chat.html" />
-        <option value="$PROJECT_DIR$/SERVER/models/db/migrations/db_post.py" />
-        <option value="$PROJECT_DIR$/SERVER/models/db/db_post.py" />
-        <option value="$PROJECT_DIR$/SERVER/models/db/db_profil.py" />
-        <option value="$PROJECT_DIR$/templates/post/action/commentary.html" />
         <option value="$PROJECT_DIR$/templates/profil/profil_index.html" />
         <option value="$PROJECT_DIR$/SERVER/views/profil.py" />
         <option value="$PROJECT_DIR$/SERVER/models/db/db_profile.py" />
@@ -316,16 +315,13 @@
         <option value="$PROJECT_DIR$/templates/post/action/comment.html" />
         <option value="$PROJECT_DIR$/templates/profile/action/authenticate.html" />
         <option value="$PROJECT_DIR$/templates/wall/wall_index.html" />
-        <option value="$PROJECT_DIR$/templates/profile/action/chat.html" />
         <option value="$PROJECT_DIR$/SERVER/app.py" />
         <option value="$PROJECT_DIR$/PROJECT_COVDPX/settings.py" />
         <option value="$PROJECT_DIR$/SERVER/apps.py" />
         <option value="$PROJECT_DIR$/SERVER/static/js/chat.js" />
         <option value="$PROJECT_DIR$/SERVER/views/wall.py" />
-        <option value="$PROJECT_DIR$/templates/profile/index.html" />
         <option value="$PROJECT_DIR$/templates/mission/action/deposit.html" />
         <option value="$PROJECT_DIR$/PROJECT_COVDPX/urls.py" />
-        <option value="$PROJECT_DIR$/SERVER/models/forms/post.py" />
         <option value="$PROJECT_DIR$/templates/mission/action/opinion.html" />
         <option value="$PROJECT_DIR$/SERVER/models/db/post.py" />
         <option value="$PROJECT_DIR$/SERVER/views/mission.py" />
@@ -334,8 +330,26 @@
         <option value="$PROJECT_DIR$/templates/mission/show/develop.html" />
         <option value="$PROJECT_DIR$/templates/mission/show/proposed.html" />
         <option value="$PROJECT_DIR$/SERVER/models/db/profile.py" />
-        <option value="$PROJECT_DIR$/templates/profile/show/informations.html" />
+        <option value="$PROJECT_DIR$/templates/wall/index.html" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/navbar.css" />
+        <option value="$PROJECT_DIR$/SERVER/static/js/post.js" />
+        <option value="$PROJECT_DIR$/SERVER/models/forms/post.py" />
+        <option value="$PROJECT_DIR$/templates/post/action/post.html" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/post.css" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/headerbar.css" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/sidebar.css" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/SERVER/static/js/jQuery.js" />
+        <option value="$PROJECT_DIR$/SERVER/static/js/bootstrap.js" />
+        <option value="$PROJECT_DIR$/templates/profile/action/chat.html" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/content.css" />
+        <option value="$PROJECT_DIR$/templates/index/navbar.html" />
+        <option value="$PROJECT_DIR$/templates/profile/index2.html" />
         <option value="$PROJECT_DIR$/SERVER/views/profile.py" />
+        <option value="$PROJECT_DIR$/templates/profile/index.html" />
+        <option value="$PROJECT_DIR$/templates/profile/action/invite.html" />
+        <option value="$PROJECT_DIR$/templates/profile/show/informations.html" />
+        <option value="$PROJECT_DIR$/SERVER/static/css/profile.css" />
       </list>
     </option>
   </component>
@@ -348,7 +362,7 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="25" />
-    <option name="width" value="1853" />
+    <option name="width" value="927" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -357,6 +371,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -405,6 +420,13 @@
               <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
               <item name="SERVER" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
+              <item name="SERVER" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -429,6 +451,12 @@
               <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
               <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="mission" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -470,6 +498,13 @@
               <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PROJECT_COVDPX" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="action" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PROJECT_COVDPX" type="b2602c69:ProjectViewProjectNode" />
@@ -488,7 +523,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -498,6 +532,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/db.sqlite3" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -677,6 +712,7 @@
       <workItem from="1585988631063" duration="6195000" />
       <workItem from="1585998801555" duration="36365000" />
       <workItem from="1586259764391" duration="40471000" />
+      <workItem from="1586507873229" duration="30125000" />
     </task>
     <servers />
   </component>
@@ -692,13 +728,39 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="233738000" />
+    <option name="totallyTimeSpent" value="277837000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.15771998" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.15938018" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.11594203" side_tool="true" weight="0.12562259" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.047516197" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.032397408" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3261339" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.032397408" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
+      <window_info anchor="bottom" id="DB Execution Console" order="13" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.36422414" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32982844" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.22302158" />
+      <window_info anchor="right" id="DB Browser" order="5" show_stripe_button="false" weight="0.32982844" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.15938018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.11594203" side_tool="true" weight="0.12562259" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -712,7 +774,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3261339" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.36933047" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.032397408" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.36422414" />
@@ -721,32 +783,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32982844" />
       <window_info anchor="right" id="Database" order="4" visible="true" weight="0.22302158" />
-      <window_info anchor="right" id="DB Browser" order="5" show_stripe_button="false" weight="0.32982844" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.884058" visible="true" weight="0.11400111" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.11594203" side_tool="true" weight="0.12562259" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991699" visible="true" weight="0.3736501" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.032397408" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3261339" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4997233" weight="0.3261339" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32937366" />
-      <window_info anchor="bottom" id="DB Execution Console" order="13" />
-      <window_info anchor="bottom" id="Database Console" order="14" weight="0.36422414" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32982844" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.3193138" />
       <window_info anchor="right" id="DB Browser" order="5" show_stripe_button="false" weight="0.32982844" />
     </layout-to-restore>
   </component>
@@ -760,98 +796,6 @@
     <SUITE FILE_PATH="coverage/PROJECT_COVDPX$user.coverage" NAME="user Coverage Results" MODIFIED="1585179558680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/COVDPX/models" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/post/action/delete_or_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/authenticate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d2bb336-0914-4328-a39e-448931346fe9/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PROJECT_COVDPX/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b3833545-ce31-4e5c-a752-22e5378a7c30/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/middleware/stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/middleware/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/stats.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/login.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/forget.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/reboot.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/views/authenticate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="95" column="14" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/authenticate/edit.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/show/others_users.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/post/action/comment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -861,13 +805,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/authenticate/registrate.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/action/authenticate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_page">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -895,30 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/action/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/static/js/chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="e#110#117#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/wall/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/views/wall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-70">
@@ -929,20 +842,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/show/missions_dev.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/show/missions_dev.html" />
     <entry file="file://$PROJECT_DIR$/templates/post/action/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -963,13 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="19" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/post.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1021,52 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mission/show/develop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/mission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/models/db/profile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SERVER/views/mission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_commentary">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_profile">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
@@ -1085,15 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_mission">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_result">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
@@ -1103,20 +941,242 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/profile/show/informations.html">
+    <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_commentary">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_mission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ac793d7f-716b-4f59-97a6-ade9a1c045f8">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/views/mission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="570">
+          <caret line="38" column="30" lean-forward="true" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/profile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/wall/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="45" lean-forward="true" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/show/chats.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/db/mission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding>
+            <element signature="e#110#117#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/js/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/models/forms/post.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/post.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/sidebar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="63" column="20" lean-forward="true" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/js/jQuery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/action/chat.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/js/bootstrap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="39553" selection-start-line="5" selection-start-column="39553" selection-end-line="5" selection-end-column="39553" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="69" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/post/action/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/action/authenticate.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="54" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://b3833545-ce31-4e5c-a752-22e5378a7c30/schema/main/table/db_profile_friends">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="ad17d89f-3ffb-4c07-82a3-fe00ca1a63ec">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1620">
+          <caret line="108" column="14" selection-start-line="108" selection-start-column="14" selection-end-line="108" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/post/show/posts.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/show/friends.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mission/show/develop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="52" lean-forward="true" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SERVER/views/profile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="112" column="30" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+        <state relative-caret-position="126">
+          <caret line="43" column="28" lean-forward="true" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/action/invite.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/headerbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1079">
+          <caret line="97" column="17" lean-forward="true" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/profile/show/informations.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SERVER/static/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="154" column="21" selection-start-line="154" selection-start-column="21" selection-end-line="154" selection-end-column="21" />
         </state>
       </provider>
     </entry>
