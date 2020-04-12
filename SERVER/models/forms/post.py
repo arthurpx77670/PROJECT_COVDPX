@@ -11,12 +11,12 @@ class PostForm(forms.Form):
 
 
 class CommentaryForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea)
-    price = forms.IntegerField(min_value=0, widget=forms.NumberInput, required=True)
+    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Détail'}), required=True)
+    price = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Prix'}), required=True)
 
 
 class ChatForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chat-text'}))
+    text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chattext', "placeholder":"message.."}))
 
 
 class DepositForm(forms.Form):
@@ -26,3 +26,10 @@ class DepositForm(forms.Form):
 class OpinionForm(forms.Form):
     opinion = forms.CharField(widget=forms.Textarea, required=True)
     mark = forms.IntegerField(min_value=0, max_value=20, widget=forms.NumberInput, required=True)
+
+
+class AutocompleteForm(forms.Form):
+    search = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Recherche..',
+                                                           'id' : 'myInput',
+                                                            'class' : 'form-control',
+                                                            "autocomplete" : "off"}), max_length=100, required=True)

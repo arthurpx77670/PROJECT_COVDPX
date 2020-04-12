@@ -1,15 +1,22 @@
 $('#chat-form').on('submit',function(event){
-    event.preventDefault();
-    console.log("form submitted!")  // sanity check
     chat();
 });
+
+
+function openChat() {
+  document.getElementById("myChat").style.display = "block";
+}
+
+function closeChat() {
+  document.getElementById("myChat").style.display = "none";
+}
 
 function chat() {
     $.ajax({
         url : window.location.href+"/chat", // the endpoint
         type : "POST", // http method
         data : {
-            chat_text : $('#chat-text').val(),
+            chat_text : $('#chattext').val(),
             csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
         }, // data sent with the post request
 
@@ -31,6 +38,7 @@ function chat() {
         }
     });
 };
+
 
 
 

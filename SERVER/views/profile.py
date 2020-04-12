@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from SERVER.models.db.profile import Profile, Chat
 from SERVER.models.db.post import Post, Commentary, Like
-from SERVER.models.forms.post import PostForm, CommentaryForm, ChatForm
+from SERVER.models.forms.post import PostForm, CommentaryForm, ChatForm, AutocompleteForm
 from SERVER.models.db.mission import Result, Mission
 from django.http import HttpResponse
 import json
@@ -18,17 +18,37 @@ def profile(request, userId):
     if user.is_authenticated and userRequest.is_authenticated:
         # form post
         Postform = PostForm()
+        # autcomlete search navbar post
+        Autocompleteform = AutocompleteForm()
 
         # list users (pas opti)
         users = User.objects.all()
         usersCount = users.count()-1
 
+
         #  user
         profile = Profile.objects.get(user_id=userId)
         # list friends user
         friends = profile.friends.all()
+        # list follow user
+        followers = Profile.objects.filter(friends=user)
         # list posts user
         posts = Post.objects.filter(description=False, author=profile)
+        # xp user
+        xp = 0
+        for commentary in Commentary.objects.filter(description=True, author=profile):
+            if commentary.mission.description == True:
+                xp = xp + commentary.price
+        # average mark user
+        averageMark = 0
+        averageMarkSize = 0
+        for commentary in Commentary.objects.filter(description=True, author=profile):
+            if commentary.mission.description == True:
+                averageMarkSize = + 1
+                averageMark = averageMark + commentary.mission.result.mark
+        if averageMarkSize != 0:
+            averageMark = averageMark / averageMarkSize
+
 
         # request
         profileRequest = Profile.objects.get(user_id=userRequest)
@@ -37,28 +57,6 @@ def profile(request, userId):
 
         # posts with mission request
         postsMissionRequest = Post.objects.filter(description=True, author=profileRequest)
-
-        xp = 0
-        for commentary in Commentary.objects.filter(description=True, author=profile):
-            if commentary.mission.description == True:
-                xpSize = + 1
-                xp = xp + commentary.price
-
-        # average mark user
-        averageMark = 0
-        averageMarkSize = 0
-        for commentary in Commentary.objects.filter(description=True, author=profile):
-            if commentary.mission.description == True:
-                averageMarkSize =+ 1
-                averageMark = averageMark + commentary.mission.result.mark
-        if averageMarkSize !=0:
-            averageMark = averageMark/averageMarkSize
-
-
-        # user follow request
-        usersfriends = User.objects.filter(friends=request.user.profile)
-        friendsCount =  usersfriends.count()
-
 
 
         # view on the other user
@@ -88,6 +86,7 @@ def profile(request, userId):
 
             return render(request, "profile/index.html",
                           {"Postform": Postform,
+                           "Autocompleteform":Autocompleteform,
                            "Commentaryform": Commentaryform,
                            "Chatform" : Chatform,
                            "users": users,
@@ -101,11 +100,12 @@ def profile(request, userId):
                            "postsMissionRequest":postsMissionRequest,
                            "averageMark":averageMark,
                            "xp":xp,
-                           "friendsCount":friendsCount
+                           "followers" :followers
                            })
 
         return render(request, "profile/index.html",
                       {"Postform": Postform,
+                       "Autocompleteform":Autocompleteform,
                        "users": users,
                        "usersCount": usersCount,
                        "user": user,
@@ -115,8 +115,18 @@ def profile(request, userId):
                        "postsMissionRequest":postsMissionRequest,
                        "averageMark":averageMark,
                        "xp":xp,
-                       "friendsCount": friendsCount
+                       "followers": followers
                        })
+
+
+def profileSearch(request):
+    if request.method == 'POST':
+        Autocompleteform = AutocompleteForm(request.POST)
+        if Autocompleteform.is_valid():
+            username = Autocompleteform.cleaned_data.get('search')
+            user = User.objects.get(username=username)
+            userId =user.id
+    return redirect('profile', userId)
 
 
 def invite(request, userId):
@@ -131,7 +141,6 @@ def invite(request, userId):
 def chat(request, userId):
     if request.method == 'POST':
         chat_text = request.POST.get('chat_text')
-
         user = User.objects.get(id=userId)
         chat = Chat(text=chat_text, receiver=user.profile, sender=request.user.profile)
         chat.save()
@@ -148,6 +157,27 @@ def chat(request, userId):
             json.dumps({"nothing to see": "this isn't happening"}),
             content_type="application/json"
         )
+
+
+# @csrf_protect
+def autocomplete(request, userId):
+    if request.method == 'POST':
+        target = request.POST.get('target')
+        users = User.objects.filter(username__contains=target)
+        listUser = []
+        for user in users:
+            listUser.append(user.username)
+        return HttpResponse(
+            json.dumps({"listUser" : listUser}),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
+
+
 
 
 # @csrf_protect

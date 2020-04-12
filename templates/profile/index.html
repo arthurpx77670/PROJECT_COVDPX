@@ -38,20 +38,20 @@
 
 
 {#         all posts #}
-        <h4>{{ posts.count }} Posts : </h4>
+{#        <h4>{{ posts.count }} Posts : </h4>#}
         <ul>
             {% for post in posts %}
 {#                   information post#}
-                {% include "./../post/show/posts.html" %}
+{#                {% include "./../post/show/posts.html" %}#}
 
 {#                  action edit the post #}
                 {% if request.user == user and request.user.is_authenticated %}
-                    {% include "./../post/action/delete_or_edit.html" %}
+{#                    {% include "./../post/action/delete_or_edit.html" %}#}
                 {% endif %}
 
 {#                  form like#}
                 {% if request.user != user and request.user.is_authenticated %}
-                    {% include "./../post/action/like.html" %}
+{#                    {% include "./../post/action/like.html" %}#}
                 {% endif %}
 
 {#                 all commentaries by post#}
@@ -59,18 +59,18 @@
                     {% if post.commentary_set.all %}
 
 {#                          filter commentary  #}
-                        <select>
-                            <option>Date</option>
-                            <option>Prix</option>
-                        </select>
+{#                        <select>#}
+{#                            <option>Date</option>#}
+{#                            <option>Prix</option>#}
+{#                        </select>#}
                         {% for commentary in post.commentary_set.all %}
 
 {#                               informations commentary#}
-                            {% include "./../post/show/commentaries.html" %}
+{#                            {% include "./../post/show/commentaries.html" %}#}
 
 {#                              action form accept this commentary => mission   #}
                             {% if user.id == request.user.id %}
-                                {% include "./../post/action/accept.html" %}
+{#                                {% include "./../post/action/accept.html" %}#}
                             {% endif %}
 
                         {% endfor %}
@@ -79,7 +79,7 @@
 
 {#                     form commentary #}
                     {% if request.user != user and request.user.is_authenticated %}
-                        {% include "./../post/action/comment.html" %}
+{#                        {% include "./../post/action/comment.html" %}#}
                     {% endif %}
                 </ul>
             {% endfor %}
@@ -88,7 +88,7 @@
     {% endif %}
 
 
-     search user
-    {% include "./show/others_users.html" %}
+{#     search user#}
+{#    {% include "./show/others_users.html" %}#}
 
 </div>
