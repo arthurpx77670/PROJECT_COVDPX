@@ -1,0 +1,129 @@
+/*posts */
+/* Style the container with a rounded border, grey background and some padding and margin */
+
+#posts{
+    display: none;
+}
+
+.post {
+    border: none;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0 10px 0;
+
+}
+
+/* Increase the font-size of a span element */
+.conditions{
+    float: right;
+}
+
+#like{
+    font-size: 30px;
+    color: white;
+    background-color: #4CAF50;
+    padding: 4px 6px 6px 6px;
+    border-radius: 100%;
+
+}
+
+#likeActive{
+    font-size: 30px;
+    color: white;
+    background-color: #4CAF50;
+    padding: 4px 6px 6px 6px;
+    border-radius: 100%;
+}
+
+#likeNumber{
+    font-size: 25px;
+    position: static;
+}
+
+.time-left {
+    font-size: 15px;
+    float: right;
+    color: #999;
+    margin-right: 5px;
+}
+
+.titlePost{
+    margin-top: 20px;
+    float: left;
+}
+
+.text{
+    font-size: 23px;
+    margin-right: 15px;
+}
+
+/*edit or delete*/
+#edit{
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: none;
+    background-color: #4CAF50;
+}
+
+#edit:hover{
+    background-color: #45a049;
+}
+
+#likeButton{
+    text-decoration: none;
+    border: none;
+    border-radius: 100%;
+
+}
+#like:hover{
+    background-color: #45a049;
+}
+
+#static{
+    position: static;
+}
+
+/* Add media queries for responsiveness. This will center both the text and the image inside the post */
+@media (max-width: 500px) {
+    .post {
+        text-align: center;
+    }
+}
+
+/*commentaries*/
+#commentaries{
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0 0 0;
+}
+
+/* form comment*/
+#commentForm textarea{
+    height: 5%;
+    width: 50%;
+}
+
+#commentForm input{
+    height: 5%;
+    width: 25%;
+    float: left;
+}
+
+#commentForm button{
+    float: right;
+}
+
+#column-comment{
+    margin-top: 10px;
+}

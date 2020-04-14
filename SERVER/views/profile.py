@@ -48,15 +48,10 @@ def profile(request, userId):
                 averageMark = averageMark + commentary.mission.result.mark
         if averageMarkSize != 0:
             averageMark = averageMark / averageMarkSize
-
-
-        # request
-        profileRequest = Profile.objects.get(user_id=userRequest)
-        # Commentary with mission dev request
-        commentaryMissionDevRequest = Commentary.objects.filter(description=True, author=profileRequest)
-
-        # posts with mission request
-        postsMissionRequest = Post.objects.filter(description=True, author=profileRequest)
+        # Commentary with mission dev
+        commentaryMissionDevRequest = Commentary.objects.filter(description=True, author=profile)
+        # posts with mission
+        postsMissionRequest = Post.objects.filter(description=True, author=profile)
 
 
         # view on the other user
@@ -74,10 +69,10 @@ def profile(request, userId):
             chats = Chat.objects.filter(
                 (Q(sender=request.user.profile) & Q(receiver=user.profile))
                 | (Q(sender=user.profile) & Q(receiver=request.user.profile)))
-            chats = chats.order_by('-date')
+            chats = chats.order_by('date')
 
             # list of my likes on the profile user (pas opti)
-            likesRequest = Like.objects.filter(author=profileRequest)
+            likesRequest = Like.objects.filter(author=request.user.profile)
             postsUserLikedRequest = []
             for likes in likesRequest:
                 if posts:
@@ -99,8 +94,8 @@ def profile(request, userId):
                            "commentaryMissionDevRequest": commentaryMissionDevRequest,
                            "postsMissionRequest":postsMissionRequest,
                            "averageMark":averageMark,
-                           "xp":xp,
-                           "followers" :followers
+                           "xp": xp,
+                           "followers": followers
                            })
 
         return render(request, "profile/index.html",
@@ -112,9 +107,9 @@ def profile(request, userId):
                        "friends": friends,
                        "posts": posts,
                        "commentaryMissionDevRequest": commentaryMissionDevRequest,
-                       "postsMissionRequest":postsMissionRequest,
-                       "averageMark":averageMark,
-                       "xp":xp,
+                       "postsMissionRequest": postsMissionRequest,
+                       "averageMark": averageMark,
+                       "xp": xp,
                        "followers": followers
                        })
 
@@ -125,7 +120,7 @@ def profileSearch(request):
         if Autocompleteform.is_valid():
             username = Autocompleteform.cleaned_data.get('search')
             user = User.objects.get(username=username)
-            userId =user.id
+            userId = user.id
     return redirect('profile', userId)
 
 
@@ -138,28 +133,6 @@ def invite(request, userId):
 
 
 @csrf_protect
-def chat(request, userId):
-    if request.method == 'POST':
-        chat_text = request.POST.get('chat_text')
-        user = User.objects.get(id=userId)
-        chat = Chat(text=chat_text, receiver=user.profile, sender=request.user.profile)
-        chat.save()
-
-        return HttpResponse(
-            json.dumps({"chatText" : chat.text,
-                        "chatReceiver": chat.receiver.user.username,
-                        "chatSender": chat.sender.user.username,
-                        }),
-            content_type="application/json"
-        )
-    else:
-        return HttpResponse(
-            json.dumps({"nothing to see": "this isn't happening"}),
-            content_type="application/json"
-        )
-
-
-# @csrf_protect
 def autocomplete(request, userId):
     if request.method == 'POST':
         target = request.POST.get('target')
@@ -178,32 +151,56 @@ def autocomplete(request, userId):
         )
 
 
+@csrf_protect
+def chat(request, userId):
+    if request.method == 'POST':
+        chat_text = request.POST.get('chat_text')
+        user = User.objects.get(id=userId)
+        chat = Chat(text=chat_text, receiver=user.profile, sender=request.user.profile)
+        chat.save()
+        return HttpResponse(
+            json.dumps({"chatText": chat.text,
+                        "chatReceiver": chat.receiver.user.username,
+                        "chatSender": chat.sender.user.username,
+                        "chatDate": str(chat.date),
+                        }),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
 
 
-# @csrf_protect
-# def refresh_chat(request, userId):
-#     if request.method == 'POST':
-#         user = User.objects.get(id=userId)
-#         lastChat = request.POST.get('lastChat')
-#
-#         chats = Chat.objects.filter(
-#             (Q(sender=request.user.profile) & Q(receiver=user.profile))
-#             | (Q(sender=user.profile) & Q(receiver=request.user.profile)))
-#         chats = chats.order_by('-date')
-#         user = User.objects.get(id=userId)
-#         chats = Chat.objects.filter()
-#
-#         return HttpResponse(
-#             # json.dumps({"chatText": chat.text,
-#             #             "chatReceiver": chat.receiver.user.username,
-#             #             "chatSender": chat.sender.user.username,
-#             #             "chatDate": chat.date,
-#             #             }),
-#             content_type="application/json"
-#         )
-#     else:
-#         return HttpResponse(
-#             json.dumps({"nothing to see": "this isn't happening"}),
-#             content_type="application/json"
-#         )
+@csrf_protect
+def chats(request, userId):
+    if request.method == 'POST':
+        chats = Chat.objects.filter(receiver=request.user.profile).order_by('-date')
+        listChat = []
+        listUsername = []
+        listUrl = []
+        listDate = []
+        for chat in chats:
+            if chat.sender.user.username not in listUsername:
+                listChat.append(chat.text)
+                listUsername.append(chat.sender.user.username)
+                listDate.append(str(chat.date))
+                if chat.sender.picture.name != False:
+                    listUrl.append("/static/media/" + chat.sender.picture.url)
+
+
+        return HttpResponse(
+            json.dumps({"listChat": listChat,
+                        "listUsername": listUsername,
+                        "listUrl" : listUrl,
+                        "listDate": listDate,
+                        }),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
 

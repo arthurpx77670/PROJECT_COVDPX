@@ -1,18 +1,8 @@
 {% load static %}
-
 {% block content %}
 
-    <h4 id="count">message avec : {{user.username }}</h4>
-
-    <ul id="talk">
-        {% for chat in chats %}
-            <br>
-            <ul>
-                <li>De : {{ chat.sender.user.username }}</li>
-                <li>Pour : {{ chat.receiver.user.username }}</li>
-                <li>{{ chat.text }}</li>
-            </ul>
-        {% endfor %}
-    </ul>
-
+    <div class="chats-popup" id="myChats">
+        <a id="minus" onclick="closeChats()"><i id="send" class="fa fa-remove"></i></a>
+        <div id="chats-popup-content"></div>
+    </div>
 {% endblock %}

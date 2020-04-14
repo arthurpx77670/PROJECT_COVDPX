@@ -1,94 +1,67 @@
+{% load static %}
 {#navar#}
 {% include "./../index/navbar.html" %}
 
-<div class="content">
-    {% if request.user.is_authenticated %}
 
-        {#    form post : pop up #}
+<div id="content" class="container" >
+    <div class="row">
+
+        <div id="card" class="col-sm-4">
+            {#   informations primary  #}
+            {% include "./show/informations.html" %}
+        </div>
+
+        <div id="plus" class="col-sm-8">
+            {#   actions #}
+            {% include "./action/invite_edit_chat.html" %}
+
+            {#   progress bar#}
+            {% include "./show/bar.html" %}
+
+            {#number case #}
+            {% include "./show/number_case.html" %}
+
+        </div>
+
+        {#  friends and followers #}
+        {% include "./show/friends_followers.html" %}
+
+
+        {#posts#}
+        <div class="row" id="posts">
+            <div class="col-sm-12" id="display">
+                {% for post in posts %}
+                    <div class="post">
+                        {# posts  #}
+                        {% include "./../post/show/posts.html" %}
+
+                        {% if post.commentary_set.all %}
+                            {% for commentary in post.commentary_set.all %}
+                                {#  commentaries  #}
+                                {% include "./../post/show/commentaries.html" %}
+                            {% endfor %}
+                        {% endif %}
+
+                        {# comment a user post  #}
+                        {% include "./../post/action/comment.html" %}
+
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {# write posts #}
         {% include "./../post/action/post.html" %}
 
-        {#    show mission dev #}
-{#        {% include "./../mission/show/develop.html" %}#}
-        {#    show mission #}
-{#        {% include "./../mission/show/proposed.html" %}#}
+        {# write chat #}
+        {% include "./action/chat.html" %}
 
-    {% endif %}
+        {# display chats #}
+        {% include "./show/chats.html" %}
 
+        {#  friends and followers #}
+        {% include "./show/friends_followers.html" %}
 
-    {# user #}
-    {% if user.is_authenticated %}
-
-        {# informations #}
-        {% include "./show/informations.html" %}
-        {#    friends#}
-{#        {% include "./show/friends.html" %}#}
-
-        {% if request.user != user and request.user.is_authenticated %}
-            {# inviations friend #}
-{#            {% include "./action/invite.html" %}#}
-
-            {# write chat#}
-{#            {% include "./action/chat.html" %}#}
-            {#  chats#}
-{#            {% include "./show/chats.html" %}#}
-        {% endif %}
-
-
-
-
-
-{#         all posts #}
-{#        <h4>{{ posts.count }} Posts : </h4>#}
-        <ul>
-            {% for post in posts %}
-{#                   information post#}
-{#                {% include "./../post/show/posts.html" %}#}
-
-{#                  action edit the post #}
-                {% if request.user == user and request.user.is_authenticated %}
-{#                    {% include "./../post/action/delete_or_edit.html" %}#}
-                {% endif %}
-
-{#                  form like#}
-                {% if request.user != user and request.user.is_authenticated %}
-{#                    {% include "./../post/action/like.html" %}#}
-                {% endif %}
-
-{#                 all commentaries by post#}
-                <ul>
-                    {% if post.commentary_set.all %}
-
-{#                          filter commentary  #}
-{#                        <select>#}
-{#                            <option>Date</option>#}
-{#                            <option>Prix</option>#}
-{#                        </select>#}
-                        {% for commentary in post.commentary_set.all %}
-
-{#                               informations commentary#}
-{#                            {% include "./../post/show/commentaries.html" %}#}
-
-{#                              action form accept this commentary => mission   #}
-                            {% if user.id == request.user.id %}
-{#                                {% include "./../post/action/accept.html" %}#}
-                            {% endif %}
-
-                        {% endfor %}
-                    {% endif %}
-
-
-{#                     form commentary #}
-                    {% if request.user != user and request.user.is_authenticated %}
-{#                        {% include "./../post/action/comment.html" %}#}
-                    {% endif %}
-                </ul>
-            {% endfor %}
-        </ul>
-
-    {% endif %}
-
-
-{#     search user#}
-{#    {% include "./show/others_users.html" %}#}
-
+    </div>
 </div>

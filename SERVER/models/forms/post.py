@@ -11,12 +11,12 @@ class PostForm(forms.Form):
 
 
 class CommentaryForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Détail'}), required=True)
+    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Ecriver un commentare'}), required=True)
     price = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Prix'}), required=True)
 
 
 class ChatForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chattext', "placeholder":"message.."}))
+    text = forms.CharField(widget=forms.Textarea(attrs={'id': 'chat-text','placeholder':'Ecriver un message..'}))
 
 
 class DepositForm(forms.Form):

@@ -1,0 +1,26 @@
+{% block content %}
+    <div class="row">
+        {% if request.user.is_authenticated  and request.user == user %}
+            <div id="static" class="col-sm-1">
+                <a href="{% url 'edit' request.user.id %}"><button>Modifier</button></a>
+            </div>
+        {% endif %}
+        {% if request.user != user and request.user.is_authenticated %}
+            {# button invite  #}
+            <div id="static" class="col-sm-2">
+                {% if user in request.user.profile.friends.all %}
+                    <div class="check">Abonné</div>
+                {% else %}
+                    <form method="post" action="{% url 'invitation' user.id %}">
+                        {% csrf_token %}
+                        <button type="submit" >Suivre</button>
+                    </form>
+                {% endif %}
+            </div>
+            <div id="static" class="col-sm-2">
+                <button onclick="openChat()" id="chat">Discuter</button>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

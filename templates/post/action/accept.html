@@ -1,9 +1,0 @@
-{% block content %}
-    {#   accept this commentary => mission#}
-    <li>
-        <form method="post" action="{% url "accept" user.id post.id commentary.id %}">
-            {% csrf_token %}
-            <button>accepté</button>
-        </form>
-    </li>
-{% endblock %}

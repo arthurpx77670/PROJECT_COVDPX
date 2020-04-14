@@ -1,17 +1,45 @@
 {% load static %}
-
 {% block content %}
 
-    <h4>Chatez</h4>
-    {#   write chat post #}
-    <form action="{% url 'chat' user.id %}" method="POST" id="chat-form" >
-        {% csrf_token %}
-        {{ Chatform.text }}
-        <div id="results"></div> <!-- errors go here -->
-        <input type="submit" value="Envoyé">
-    </form>
-
-    <script type="text/javascript" src="{% static "/js/jQuery.js" %}"></script>
-    <script type="text/javascript" src="{% static "/js/chat.js" %}"></script>
+    <div class="chat-popup" id="myChat">
+        <form  class="form-container">
+            <div class="row">
+                <a href="{% url 'profile' user.id %}" class="top-menu">
+                    <div class="chip">
+                        {% if user.profile.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{ user.profile.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        {{user.username}}
+                    </div>
+                    <a id="minus" onclick="closeChat()"><i id="send" class="fa fa-remove"></i></a>
+                </a>
+            </div>
+            <div class="row">
+                <div class="chat-content" id="talk">
+                    {% for chat in chats %}
+                        <div class="row">
+                            <span class="time">{{ chat.date }}</span>
+                        </div>
+                        <div class="row">
+                            {% if chat.sender.user == request.user %}
+                                <div class="conversation request">
+                                    <p>{{chat.text}}</p>
+                                </div>
+                            {% else %}
+                                <div class="conversation user">
+                                    <p>{{chat.text}}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row">
+                {% csrf_token %}
+                {{ Chatform.text }}
+                <a id="click-send" onclick="submitChat()"><i id="send" class="fa fa-paper-plane"></i></a>
+            </div>
+        </form>
+    </div>
 
 {% endblock %}

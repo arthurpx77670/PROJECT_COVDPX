@@ -1,0 +1,20 @@
+/* bar xp*/
+#bar{
+    margin-top: 30px;
+    height: 75px;
+}
+
+#bar .col-sm-1, #bar .col-sm-9{
+    position: static;
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    height: 30px;
+    background-color: #4CAF50;
+    color: white;
+}

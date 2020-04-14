@@ -10,6 +10,11 @@
         <link type="text/css" rel="stylesheet" href="{% static "css/post.css" %}">
         <link type="text/css" rel="stylesheet" href="{% static "css/profile.css" %}">
         <link type="text/css" rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link type="text/css" rel="stylesheet" href="{% static "css/chat.css" %}">
+        <link type="text/css" rel="stylesheet" href="{% static "css/progressiveBar.css" %}">
+        <link type="text/css" rel="stylesheet" href="{% static "css/posts&comms.css" %}">
+        <link type="text/css" rel="stylesheet" href="{% static "css/numberCase.css" %}">
+        <link type="text/css" rel="stylesheet" href="{% static "css/friends&followers.css" %}">
     </head>
 
 
@@ -37,7 +42,7 @@
             </a>
 
             <a href="{% url 'logout' %}">Déconnexion</a>
-            <a>Chat</a>
+            <a onclick="openChats()">Chat</a>
 
         </div>
     </div>
@@ -70,4 +75,6 @@
     <script type="text/javascript" src="{% static "/js/bootstrap.js" %}"></script>
     <script type="text/javascript" src="{% static "/js/post.js" %}"></script>
     <script type="text/javascript" src="{% static "/js/chat.js" %}"></script>
+    <script type="text/javascript" src="{% static "/js/display.js" %}"></script>
+
 {% endblock %}

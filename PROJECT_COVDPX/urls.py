@@ -37,6 +37,8 @@ urlpatterns = [
     #profile
     path('login/profile?<int:userId>/invitation', profile.invite, name='invitation'),
     path('login/profile?<int:userId>/chat', profile.chat, name='chat'),
+    path('login/profile?<int:userId>/chats', profile.chats, name='chats'),
+
     path('login/profile?<int:userId>/autocomplete', profile.autocomplete, name='autocomplete'),
     path('login/profileSearch', profile.profileSearch, name='profileSearch'),
     #path('login/profile?<int:userId>/refresh_chat', profile.refresh_chat, name='refresh_chat'),

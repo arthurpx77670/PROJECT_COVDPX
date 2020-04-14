@@ -1,0 +1,196 @@
+/*chat form*/
+/* Button used to open the chat form - fixed at the bottom of the page */
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 5px solid #4CAF50;
+  z-index: 9;
+  box-shadow: 0 14px 18px 0 black;
+  border-radius: 10px;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+  resize: none;
+  border-radius: 10px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.chat-content{
+  overflow: auto;
+  padding-left: 10px;
+  max-height: 250px;
+  background-color: white;
+  border-radius: 5px;
+  overflow-x: hidden;
+
+}
+
+#send{
+  font-size: 25px;
+  color: #4CAF50;
+}
+
+#minus{
+  float: right;
+}
+
+#send:hover{
+  color: #45a049;
+}
+
+
+
+
+/*convesations*/
+/* Chat containers */
+.conversation {
+  border: 2px solid #dedede;
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 25px;
+  word-wrap: anywhere;
+  min-width: 150px;
+  max-width: 250px;
+}
+
+
+.user{
+  float: left;
+}
+
+
+.user #chat-pict img{
+  border-radius: 100%;
+  border: 1px solid #4CAF50;
+  height: 35px;
+  width: 35px;
+
+}
+
+.request #chat-pict img{
+  border-radius: 100%;
+  border: 1px solid #4CAF50;
+  height: 35px;
+  width: 35px;
+  float: right;
+
+}
+
+
+/* Darker chat conversation */
+.request {
+  float: right;
+  border-color: #ccc;
+  background-color: #ddd;
+  margin-right: 10px;
+}
+
+
+/* Style images */
+.conversation img {
+  float: left;
+}
+
+/* Style the right image */
+
+/* Style time text */
+.time {
+  color: #aaa;
+  font-size: 10px;
+}
+
+/*button chat on header navebar'*/
+
+.chats-popup{
+  display: none;
+  position: fixed;
+  top: 90px;
+  right: 15px;
+  border: 5px solid #4CAF50;
+  z-index: 9;
+  box-shadow: 0 14px 18px 0 black;
+  border-radius: 10px;
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  overflow: auto;
+  padding-right: 10px;
+
+}
+
+#chat-notif{
+  color: black;
+  float: right;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+#user-notif{
+  float: left;
+  margin-left: 10px;
+}
+
+#notif{
+  background-color: #ddd;
+  height: 90px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+#notif:hover{
+  background-color: #888888;
+}
+
+#link-notif{
+  text-decoration: none;
+  text-underline: none;
+  color: black;
+}

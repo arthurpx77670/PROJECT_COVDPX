@@ -1,9 +1,33 @@
+{% load static %}
 {% block content %}
-    {# commentary informations#}
-    <li>{{ commentary.text }}</li>
-    <li> par : {{ commentary.author.user.username }}</li>
-    <li> pour : {{ commentary.price }}</li>
-    <li>le : {{ commentary.date }}</li>
-    <br>
+
+    <div id="commentaries">
+        {#   informations commentary#}
+        <div class="row">
+            <div id="static"  class="col-sm-4">
+                <a href="{% url 'profile' commentary.author.user.id %}" class="top-menu">
+                    <div class="chip">
+                        {% if commentary.author.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{ commentary.author.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        {{commentary.author.user.username}}
+                    </div>
+                </a>
+                {% if user.id == request.user.id %}
+                    <form method="post" action="{% url "accept" user.id post.id commentary.id %}">
+                        {% csrf_token %}
+                        <button id="edit">accepté</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+        <p class="text">{{ commentary.text }}</p>
+        <div class="row">
+            <div id="static"  class="col-sm-2">
+                <p class="conditions">Prix : {{ commentary.price }}</p>
+            </div>
+            <span class="time-left">{{ commentary.date }}</span>
+        </div>
+    </div>
 
 {% endblock %}

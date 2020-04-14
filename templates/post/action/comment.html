@@ -1,14 +1,26 @@
+{% load static %}
 {% block content %}
-{#    comment a posts of a user#}
-    <li>Commenter :
-        <form method="post" action="{% url 'comment'  user.id post.id %}">
-            {% csrf_token %}
-            <p>
-                {% for field in Commentaryform %}
-                    {{ field }}<br>
-                {% endfor %}
-            </p>
-            <button type="submit">Envoyé</button>
-        </form>
-    </li>
+    {#    comment a posts of a user#}
+    {% if request.user != user and request.user.is_authenticated %}
+        <div id="commentaries" class="row">
+            <div id="column-comment" class="col-sm-12">
+                <a href="{% url 'profile' request.user.id %}" class="top-menu">
+                    <div class="chip">
+                        {% if request.user.profile.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{ request.user.profile.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        {{request.user.username}}
+                    </div>
+                </a>
+                <div id="commentForm">
+                    <form method="post" action="{% url 'comment'  user.id post.id %}">
+                        {% csrf_token %}
+                        {{ Commentaryform.price }}
+                        {{ Commentaryform.text }}
+                        <button id="edit" type="submit">Envoyé</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

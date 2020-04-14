@@ -1,0 +1,17 @@
+{% block content %}
+    <div id="bar" class="row">
+        {% if xp != 0 %}
+            <div class="col-sm-1">XP :</div>
+            <div class="col-sm-1">1</div>
+            <div class="col-sm-9">
+                <div id="myProgress">
+                    <div id="myBar" style="width: {{ xp }}%">
+                        {{ xp }}/200
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1">2</div>
+        {% endif %}
+    </div>
+
+{% endblock %}

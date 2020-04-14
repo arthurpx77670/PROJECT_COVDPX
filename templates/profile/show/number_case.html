@@ -1,0 +1,58 @@
+{% block content %}
+    <div class="row">
+        <a onclick="display_commenatry()">
+            {% if averageMark != 0 %}
+                <div class="column">
+                    <div class="card commentary">
+                        <p><i class="fa fa-heart"></i></p>
+                        <h3>
+                            {{ averageMark }}/20
+                        </h3>
+                        <p>Note</p>
+                    </div>
+                </div>
+            {% endif %}
+        </a>
+        <div class="column">
+            <a onclick="display_friends()">
+                <div class="card friends">
+                    <p><i class="fa fa-user"></i></p>
+                    <h3>{{ friends.count }}</h3>
+                    <p>Abonnement</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="column">
+            <a onclick="display_followers()">
+                <div class="card followers">
+                    <p><i class="fa fa-group"></i></p>
+                    <h3>{{ followers.count }}</h3>
+                    <p>Abonnés</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="column">
+            <a onclick="display_commenatry()">
+                <div class="card dev">
+                    <p><i class="fa fa-cogs"></i></p>
+                    <h3>{{ commentaryMissionDevRequest.count }}</h3>
+                    <p>Projets déve</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="column">
+            <a onclick="display_posts()">
+                <div class="card posts">
+                    <p><i class="fa fa-folder-open"></i></p>
+                    <h3>{{ posts.count }}</h3>
+                    <p>Projets prop</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
