@@ -3,7 +3,7 @@
 {% block content %}
     {# information post#}
     <div class="row">
-        <div id="static" class="col-sm-5">
+        <div class="col-sm-5">
             <a href="{% url 'profile' user.id %}" class="top-menu">
                 <div class="chip">
                     {% if user.profile.picture.name != "False" %}
@@ -22,7 +22,7 @@
                 </form>
             {% endif %}
         </div>
-        <div id="static"  class="col-sm-5">
+        <div  class="col-sm-5">
             <p class="titlePost">{{ post.title }}</p>
         </div>
 
@@ -46,11 +46,24 @@
     <p class="text">{{ post.text }}</p>
 
     <div class="row">
-        <div id="static"  class="col-sm-2">
-            <p class="conditions">Prix : {{ post.price }}</p>
-        </div>
-        <div id="static"  class="col-sm-2">
-            <p class="conditions">Pour le : {{ post.deadline }}</p>
+        {% if request.user %}
+            <div  class="col-sm-2">
+                <p class="conditions">Ma Mise : {{ post.price }}</p>
+            </div>
+            <div  class="col-sm-2">
+                <p class="conditions"> Ma Cote : {{ post.cotation }}</p>
+            </div>
+
+            <div  class="col-sm-2">
+                <p class="conditions">Mise adversaire : {{ post.priceUser }}</p>
+            </div>
+            <div  class="col-sm-2">
+                <p class="conditions">Cote adversaire : {{ post.cotationUser }}</p>
+            </div>
+        {% endif %}
+
+        <div  class="col-sm-2">
+            <p class="conditions">Avant  le : {{ post.deadline }}</p>
         </div>
         <span class="time-left">{{ post.date }}</span>
     </div>

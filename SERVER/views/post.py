@@ -4,6 +4,10 @@ from SERVER.models.db.profile import Profile
 from SERVER.models.db.post import Post, Commentary, Like
 from SERVER.models.db.mission import Mission
 from SERVER.models.forms.post import PostForm, CommentaryForm
+from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+import json
 
 
 def post(request, userId):
@@ -12,14 +16,26 @@ def post(request, userId):
         if Postform.is_valid():
             title = Postform.cleaned_data.get('title')
             text = Postform.cleaned_data.get('text')
-            price = Postform.cleaned_data.get('price')
+            price = round(Postform.cleaned_data.get('price'),2)
             deadline = Postform.cleaned_data.get('deadline')
+            cotation = round(Postform.cleaned_data.get('cotation'),1)
             if Postform.cleaned_data.get('file') is None:
                 file = False
             else:
                 file = Postform.cleaned_data.get('file')
             author = Profile.objects.get(user=request.user)
-            post = Post.objects.create(title=title, text=text, author_id=author.id, file=file, price=price, deadline=deadline,description=False)
+            cotationUser = round(cotation/(cotation-1),1)
+            priceUser = round((price*cotation)/cotationUser,2)
+            post = Post.objects.create(title=title,
+                                       text=text,
+                                       author_id=author.id,
+                                       file=file,
+                                       price=price,
+                                       deadline=deadline,
+                                       description=False,
+                                       cotation=cotation,
+                                       cotationUser=cotationUser,
+                                       priceUser=priceUser)
             post.save()
     return redirect('profile', userId)
 
@@ -33,6 +49,7 @@ def edit(request, userId, postId):
             text = form.cleaned_data.get('text')
             price = form.cleaned_data["price"]
             deadline = form.cleaned_data["deadline"]
+            cotation = form.cleaned_data["cotation"]
             if form.cleaned_data.get('file') is None:
                 file = False
             else:
@@ -43,6 +60,7 @@ def edit(request, userId, postId):
             post.file = file
             post.price = price
             post.file = file
+            post.cotation = cotation
             post.deadline = deadline
             post.save()
 
@@ -53,12 +71,14 @@ def edit(request, userId, postId):
                                      'text': post.text,
                                      'file': post.file,
                                      'price': post.price,
-                                     'deadline': post.deadline})
+                                     'deadline': post.deadline,
+                                     'cotation' : post.cotation})
         else:
             form = PostForm(initial={'title': post.title,
                                      'text': post.text,
                                      'price': post.price,
-                                     'deadline': post.deadline})
+                                     'deadline': post.deadline,
+                                     'cotation' : post.cotation})
 
     return render(request, 'post/action/edit.html', {'form': form})
 
@@ -108,3 +128,26 @@ def accept(request, userId, postId, commentaryId):
         commentary.save()
 
     return redirect('profile',userId)
+
+
+@csrf_protect
+def take(request, userId, postId):
+    if request.method == 'POST':
+        post = Post.objects.get(id=postId)
+        author = User.objects.get(id=userId).profile
+        commentary = Commentary.objects.create(description=True, price=post.price, post=post, author = author)
+
+        mission = Mission.objects.create(proposition=post, accept=commentary,description=False)
+        mission.save()
+
+        post.description = True
+        post.save()
+        return HttpResponse(
+            json.dumps({"price": post.price*post.cotation}),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )

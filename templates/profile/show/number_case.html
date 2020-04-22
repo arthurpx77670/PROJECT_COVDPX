@@ -1,17 +1,21 @@
 {% block content %}
     <div class="row">
         <a onclick="display_commenatry()">
-            {% if averageMark != 0 %}
-                <div class="column">
-                    <div class="card commentary">
-                        <p><i class="fa fa-heart"></i></p>
-                        <h3>
+
+            <div class="column">
+                <div class="card commentary">
+                    <p><i class="fa fa-heart"></i></p>
+                    <h3>
+                        {% if averageMark != 0 %}
                             {{ averageMark }}/20
-                        </h3>
-                        <p>Note</p>
-                    </div>
+                        {% else %}
+                            Pas encore
+                        {% endif %}
+                    </h3>
+                    <p>Confiance</p>
                 </div>
-            {% endif %}
+            </div>
+
         </a>
         <div class="column">
             <a onclick="display_friends()">
@@ -36,9 +40,9 @@
         <div class="column">
             <a onclick="display_commenatry()">
                 <div class="card dev">
-                    <p><i class="fa fa-cogs"></i></p>
+                    <p><i class="fa fa-money"></i></p>
                     <h3>{{ commentaryMissionDevRequest.count }}</h3>
-                    <p>Projets déve</p>
+                    <p>Versus</p>
                 </div>
             </a>
         </div>
@@ -46,9 +50,9 @@
         <div class="column">
             <a onclick="display_posts()">
                 <div class="card posts">
-                    <p><i class="fa fa-folder-open"></i></p>
+                    <p><i class="fa fa-balance-scale"></i></p>
                     <h3>{{ posts.count }}</h3>
-                    <p>Projets prop</p>
+                    <p>Enchère</p>
                 </div>
             </a>
         </div>

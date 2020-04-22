@@ -2,8 +2,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     text-align: center;
-    position: static;
-    margin-bottom: 10px;
+
 }
 
 .titleProfile {
@@ -33,10 +32,11 @@
 /* space decription profile*/
 #plus {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    position: static;
-    margin-left: 10px;
-    width: 65%;
-    margin-bottom: 10px;
+    padding-top: 16.5px;
+    margin-left: 2%;
+    width: 73%;
+    margin-bottom: 2%;
+
 }
 
 #plus button{
@@ -77,11 +77,9 @@
 
 
 /*undercase */
-
 #display{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: static;
-    width: 92%;
     padding-top: 5px;
 
 }

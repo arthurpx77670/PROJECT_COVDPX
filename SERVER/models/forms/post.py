@@ -5,14 +5,15 @@ import datetime
 class PostForm(forms.Form):
     title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Titre'}), max_length=100, required=True)
     text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Détail'}))
-    price = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Prix'}), required=True)
+    price = forms.FloatField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Mise', 'step': '0.01','id':'price'}), required=True)
+    cotation = forms.FloatField(min_value=1, widget=forms.NumberInput(attrs={'placeholder': 'Côte','id':'cotation', 'step': '0.1'}), required=True)
     deadline = forms.DateField(widget=forms.SelectDateWidget,initial=datetime.date.today)
     file = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': False, 'name': 'parcourir'}), required=False)
 
 
 class CommentaryForm(forms.Form):
-    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Ecriver un commentare'}), required=True)
-    price = forms.IntegerField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Prix'}), required=True)
+    text = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Ecriver un commentaire'}), required=True)
+    price = forms.FloatField(min_value=0, widget=forms.NumberInput(attrs={'placeholder': 'Mise', 'step': '0.01','classe':'price-com'}), required=True)
 
 
 class ChatForm(forms.Form):

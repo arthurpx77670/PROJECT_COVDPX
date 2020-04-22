@@ -19,7 +19,7 @@
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 50%;
+    width: 30%;
     height: 80%;/* Could be more or less, depending on screen size */
 }
 
@@ -40,14 +40,14 @@
 
 .title {
     color: white;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
 }
 
 .mission {
-    padding: 16px;
+    padding: 10px;
     background-color: #4CAF50;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 }
 
 
@@ -119,4 +119,14 @@ input:hover:not(.button), textarea:hover, select:hover{
 
 .send:hover {
     background-color: #45a049;
+}
+
+/*  calcule cotation add js */
+#calcul-cote{
+    color: #4CAF50;
+
+}
+
+#action-take-result{
+
 }

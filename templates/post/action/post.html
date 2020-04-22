@@ -2,19 +2,24 @@
     <div class="form-popup" id="myForm">
         <div class="modal-content animate">
             <div class="mission">
-                <div class="title">Soumettre une mission</div>
+                <div class="title">Proposer un pari</div>
             </div>
             {#   write form post #}
             <form method="post" enctype="multipart/form-data" action="{% url 'post' user.id%}">
                 {% csrf_token %}
-                {% for field in Postform %}
-                    <p>
-                        {{ field }}
-                        {% if field.help_text %}
-                            <small style="color: grey">{{ field.help_text }}</small>
-                        {% endif %}
-                    </p>
-                {% endfor %}
+                <p>{{ Postform.title }}</p>
+                <p>{{ Postform.text }}</p>
+                <p>{{ Postform.price }}</p>
+                <p>{{ Postform.cotation }}</p>
+                <p id="calcul-cote"></p>
+                <p>{{ Postform.deadline }}</p>
+                <p>{{ Postform.file }}</p>
+
+
+
+
+
+
                 <input class="button send" type="submit" value="Envoyer">
                 <input class="button cancel" value="Annuler" onclick="closeForm()">
             </form>

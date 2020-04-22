@@ -13,14 +13,16 @@
                     </div>
                 </a>
                 <div id="commentForm">
-                    <form method="post" action="{% url 'comment'  user.id post.id %}">
+                    <form id="comment-form" method="post" action="{% url 'comment'  user.id post.id %}">
                         {% csrf_token %}
                         {{ Commentaryform.price }}
                         {{ Commentaryform.text }}
-                        <button id="edit" type="submit">Envoyé</button>
+                        <button onclick="negociate()" id="edit" type="submit">Envoyé</button>
                     </form>
                 </div>
             </div>
         </div>
+
+
     {% endif %}
 {% endblock %}

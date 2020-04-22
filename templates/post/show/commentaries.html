@@ -4,7 +4,7 @@
     <div id="commentaries">
         {#   informations commentary#}
         <div class="row">
-            <div id="static"  class="col-sm-4">
+            <div class="col-sm-4">
                 <a href="{% url 'profile' commentary.author.user.id %}" class="top-menu">
                     <div class="chip">
                         {% if commentary.author.picture.name != "False" %}
@@ -21,10 +21,10 @@
                 {% endif %}
             </div>
         </div>
-        <p class="text">{{ commentary.text }}</p>
+        <p class="text">{{ commentary.price }}</p>
         <div class="row">
-            <div id="static"  class="col-sm-2">
-                <p class="conditions">Prix : {{ commentary.price }}</p>
+            <div class="col-sm-2">
+                <p class="conditions">{{ commentary.text }}</p>
             </div>
             <span class="time-left">{{ commentary.date }}</span>
         </div>

@@ -33,7 +33,7 @@ def profile(request, userId):
         # list follow user
         followers = Profile.objects.filter(friends=user)
         # list posts user
-        posts = Post.objects.filter(description=False, author=profile)
+        posts = Post.objects.filter(description=False, author=profile).order_by('-date')
         # xp user
         xp = 0
         for commentary in Commentary.objects.filter(description=True, author=profile):
@@ -47,7 +47,7 @@ def profile(request, userId):
                 averageMarkSize = + 1
                 averageMark = averageMark + commentary.mission.result.mark
         if averageMarkSize != 0:
-            averageMark = averageMark / averageMarkSize
+            averageMark = int(averageMark / averageMarkSize)
         # Commentary with mission dev
         commentaryMissionDevRequest = Commentary.objects.filter(description=True, author=profile)
         # posts with mission

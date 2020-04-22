@@ -3,15 +3,15 @@
 {% include "./../index/navbar.html" %}
 
 
-<div id="content" class="container" >
+<div class="container" id="content">
     <div class="row">
 
-        <div id="card" class="col-sm-4">
+        <div class="col-sm-3" id="card" >
             {#   informations primary  #}
             {% include "./show/informations.html" %}
         </div>
 
-        <div id="plus" class="col-sm-8">
+        <div class="col-sm-9" id="plus" >
             {#   actions #}
             {% include "./action/invite_edit_chat.html" %}
 
@@ -35,16 +35,35 @@
                         {# posts  #}
                         {% include "./../post/show/posts.html" %}
 
-                        {% if post.commentary_set.all %}
-                            {% for commentary in post.commentary_set.all %}
-                                {#  commentaries  #}
-                                {% include "./../post/show/commentaries.html" %}
-                            {% endfor %}
+                        {% if request.user != user %}
+                            <div id="action-take-result">
+                            </div>
+                            <div id="action-take">
+                                <button id="take" onclick="take({{ post.id }})">Prendre le pari</button>
+                                <button id="take" onclick="display_comment({{ post.id }})">Négocier le pari</button>
+                            </div>
+                        {% else %}
+                            {% if post.commentary_set.all %}
+                                <button id="take" onclick="display_comment({{ post.id }})">voir les enchères {{ post.commentary_set.all.count }}</button>
+                            {% endif %}
                         {% endif %}
 
-                        {# comment a user post  #}
-                        {% include "./../post/action/comment.html" %}
+                        {#  activation if action js #}
+                        <div class="display-comment-all" id="display-comment-{{ post.id }}">
+                            <a id="minus" onclick="closeComment({{ post.id }})"><i id="send" class="fa fa-remove"></i></a>
+                            {#  comment a user post  #}
+                            {% include "./../post/action/comment.html" %}
 
+                            {% if post.commentary_set.all %}
+                                {% for commentary in post.commentary_set.all %}
+                                    {#  commentaries#}
+                                    {% include "./../post/show/commentaries.html" %}
+                                {% endfor %}
+                            {% endif %}
+
+
+
+                        </div>
 
                     </div>
                 {% endfor %}
@@ -65,3 +84,6 @@
 
     </div>
 </div>
+
+{# footer #}
+{% include "./../index/footer.html" %}

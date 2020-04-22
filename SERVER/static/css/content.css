@@ -3,12 +3,12 @@
 #content {
     text-align: center;
     margin-top: 110px;
-    margin-left: 300px;
+    min-height: 2000px;
 }
 
 /*On screens that are less than 700px wide, make the sidebar into a topbar*/
-@media screen and (max-width: 750px) {
-    .content{
-        margin-left: 130px;
+@media screen and (max-width: 400px) and (max-height: 800px) {
+    #content{
+        width: 20%;
     }
 }

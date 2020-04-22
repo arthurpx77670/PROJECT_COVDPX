@@ -88,9 +88,7 @@
     background-color: #45a049;
 }
 
-#static{
-    position: static;
-}
+
 
 /* Add media queries for responsiveness. This will center both the text and the image inside the post */
 @media (max-width: 500px) {
@@ -106,12 +104,15 @@
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0 0 0;
+
 }
 
 /* form comment*/
 #commentForm textarea{
     height: 5%;
     width: 50%;
+    position: static;
+    background-color: white;
 }
 
 #commentForm input{
@@ -126,4 +127,36 @@
 
 #column-comment{
     margin-top: 10px;
+    position: static;
+}
+
+#comment-form{
+}
+
+
+/*button take a pari */
+#take{
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: none;
+    background-color: #4CAF50;
+    width: 49%;
+
+}
+
+#take:hover{
+    background-color: #45a049;
+}
+
+
+/* action js display comment all*/
+.display-comment-all{
+    display: none;
 }

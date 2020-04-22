@@ -50,6 +50,8 @@ urlpatterns = [
     path('login/profile/like/<int:userId>/<int:postId>', post.like, name='like'),
     path('login/profile/edit/<int:userId>/<int:postId>', post.edit, name='edit'),
     path('login/profile/delete/<int:userId>/<int:postId>', post.delete, name='delete'),
+    path('login/profile?<int:userId>/take/<int:postId>', post.take, name='take'),
+
 
     #wall
     path('login/wall', wall.wall, name='wall'),
