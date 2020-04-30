@@ -1,7 +1,7 @@
 {% block content %}
     <div class="form-popup" id="myForm">
         <div class="modal-content animate">
-            <div class="mission">
+            <div class="title-popup">
                 <div class="title">Proposer un pari</div>
             </div>
             {#   write form post #}
@@ -14,11 +14,6 @@
                 <p id="calcul-cote"></p>
                 <p>{{ Postform.deadline }}</p>
                 <p>{{ Postform.file }}</p>
-
-
-
-
-
 
                 <input class="button send" type="submit" value="Envoyer">
                 <input class="button cancel" value="Annuler" onclick="closeForm()">

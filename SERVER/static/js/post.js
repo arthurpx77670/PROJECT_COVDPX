@@ -31,6 +31,18 @@ function cote() {
 }
 
 
+// display take popup
+function takePopup(priceUser) {
+    $('.action-take-result').text("Prix : " + priceUser);
+    $('#take-popup').css("display", "block");
+}
+
+
+//close take popup
+function closeTake() {
+    $('#take-popup').css("display", "none");
+}
+
 //take a pari
 function take(postId) {
     $.ajax({
@@ -42,9 +54,9 @@ function take(postId) {
 
         // handle a successful response
         success: function (json) {
+            $('#take-popup').css("display", "none");
             $('#action-take').css("display", "none");
-
-            $('#action-take-result').text("Vous avez pariez " + json.price)
+            $('#action-take-confirm').text("Vous avez pariez")
 
         },
 

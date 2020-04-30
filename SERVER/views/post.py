@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect
-from SERVER.models.db.stats import Page
 from SERVER.models.db.profile import Profile
 from SERVER.models.db.post import Post, Commentary, Like
-from SERVER.models.db.mission import Mission
 from SERVER.models.forms.post import PostForm, CommentaryForm
 from django.views.decorators.csrf import csrf_protect
+from SERVER.models.db.mission import Mission
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 import json
@@ -24,8 +23,9 @@ def post(request, userId):
             else:
                 file = Postform.cleaned_data.get('file')
             author = Profile.objects.get(user=request.user)
+            priceUser = price * (cotation - 1)
             cotationUser = round(cotation/(cotation-1),1)
-            priceUser = round((price*cotation)/cotationUser,2)
+
             post = Post.objects.create(title=title,
                                        text=text,
                                        author_id=author.id,
@@ -98,44 +98,12 @@ def like(request, postId, userId):
     return redirect('profile',userId)
 
 
-def comment(request, postId, userId):
-    if request.method == 'POST':
-        Commentaryform = CommentaryForm(request.POST)
-        if Commentaryform.is_valid():
-            post = Post.objects.get(id=postId)
-            author = Profile.objects.get(user=request.user)
-
-            text = Commentaryform.cleaned_data.get('text')
-            price = Commentaryform.cleaned_data.get('price')
-            commentary = Commentary.objects.create(text=text, author_id=author.id, post_id=postId, price=price)
-            commentary.save()
-
-    return redirect('profile',userId)
-
-
-def accept(request, userId, postId, commentaryId):
-    if request.method == 'POST':
-        post = Post.objects.get(id=postId)
-        commentary = Commentary.objects.get(id=commentaryId)
-
-        mission = Mission.objects.create(proposition=post, accept=commentary,description=False)
-        mission.save()
-
-        post.description = True
-        post.save()
-
-        commentary.description = True
-        commentary.save()
-
-    return redirect('profile',userId)
-
-
 @csrf_protect
 def take(request, userId, postId):
     if request.method == 'POST':
         post = Post.objects.get(id=postId)
-        author = User.objects.get(id=userId).profile
-        commentary = Commentary.objects.create(description=True, price=post.price, post=post, author = author)
+        author = request.user.profile
+        commentary = Commentary.objects.create(description=True, price=post.price, post=post, author = author, cotation=post.cotationUser)
 
         mission = Mission.objects.create(proposition=post, accept=commentary,description=False)
         mission.save()
@@ -143,7 +111,7 @@ def take(request, userId, postId):
         post.description = True
         post.save()
         return HttpResponse(
-            json.dumps({"price": post.price*post.cotation}),
+            json.dumps({}),
             content_type="application/json"
         )
     else:
@@ -151,3 +119,4 @@ def take(request, userId, postId):
             json.dumps({"nothing to see": "this isn't happening"}),
             content_type="application/json"
         )
+

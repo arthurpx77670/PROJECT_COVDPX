@@ -3,8 +3,6 @@
     {# mission dev informations#}
     <h4>missions prisent en charge: </h4>
     {% for post in postsMissionRequest %}
-
-
         {#  mission pending #}
         {% if post.mission.description == False %}
             <li>titre {{ post.title }}</li>

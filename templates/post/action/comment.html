@@ -13,16 +13,23 @@
                     </div>
                 </a>
                 <div id="commentForm">
-                    <form id="comment-form" method="post" action="{% url 'comment'  user.id post.id %}">
-                        {% csrf_token %}
-                        {{ Commentaryform.price }}
-                        {{ Commentaryform.text }}
-                        <button onclick="negociate()" id="edit" type="submit">Envoyé</button>
-                    </form>
+                    {% csrf_token %}
+                    {{ Commentaryform.price }}
+                    {{ Commentaryform.text }}
+                    <button onclick="negociatePopup({{ post.id }})" id="edit">Envoyé</button>
                 </div>
             </div>
         </div>
 
+        {#  popup negociate  #}
+        <div id="negociate-popup" class="popup">
+            <div class="submit-modal-content animate">
+                <div class="mission">
+                    <div class="title">Négocier le pari</div>
+                </div>
+                <div class="content-popup"></div>
+            </div>
+        </div>
 
     {% endif %}
 {% endblock %}

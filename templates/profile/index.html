@@ -35,19 +35,6 @@
                         {# posts  #}
                         {% include "./../post/show/posts.html" %}
 
-                        {% if request.user != user %}
-                            <div id="action-take-result">
-                            </div>
-                            <div id="action-take">
-                                <button id="take" onclick="take({{ post.id }})">Prendre le pari</button>
-                                <button id="take" onclick="display_comment({{ post.id }})">Négocier le pari</button>
-                            </div>
-                        {% else %}
-                            {% if post.commentary_set.all %}
-                                <button id="take" onclick="display_comment({{ post.id }})">voir les enchères {{ post.commentary_set.all.count }}</button>
-                            {% endif %}
-                        {% endif %}
-
                         {#  activation if action js #}
                         <div class="display-comment-all" id="display-comment-{{ post.id }}">
                             <a id="minus" onclick="closeComment({{ post.id }})"><i id="send" class="fa fa-remove"></i></a>
@@ -60,13 +47,20 @@
                                     {% include "./../post/show/commentaries.html" %}
                                 {% endfor %}
                             {% endif %}
-
-
-
                         </div>
 
                     </div>
                 {% endfor %}
+            </div>
+        </div>
+
+
+        {#missions#}
+        <div class="row" id="missions">
+            <div class="col-sm-12" id="display">
+                {% include "./../mission/show/missions.html" %}
+                {#                {% include "./../mission/show/develop.html" %}#}
+                {#                {% include "./../mission/show/proposed.html" %}#}
             </div>
         </div>
 

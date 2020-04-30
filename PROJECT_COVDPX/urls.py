@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from SERVER.views import index
-from SERVER.views import authenticate, profile, wall, post, mission
+from SERVER.views import authenticate, profile, wall, post, mission, comment
 from django.urls import path
 
 
@@ -45,13 +45,16 @@ urlpatterns = [
 
     #post
     path('login/profile?<int:userId>/post', post.post, name='post'),
-    path('login/profile/comment/<int:userId>/<int:postId>', post.comment, name='comment'),
-    path('login/profile/accept/<int:userId>/<int:postId>/<int:commentaryId>', post.accept, name='accept'),
     path('login/profile/like/<int:userId>/<int:postId>', post.like, name='like'),
     path('login/profile/edit/<int:userId>/<int:postId>', post.edit, name='edit'),
     path('login/profile/delete/<int:userId>/<int:postId>', post.delete, name='delete'),
     path('login/profile?<int:userId>/take/<int:postId>', post.take, name='take'),
 
+
+    #comment
+    path('login/profile?<int:userId>/comment/<int:postId>', comment.comment, name='comment'),
+    path('login/profile/accept/<int:userId>/<int:postId>/<int:commentaryId>', comment.accept, name='accept'),
+    path('login/profile?<int:userId>/negociate/<int:postId>', comment.negociate, name='negociate'),
 
     #wall
     path('login/wall', wall.wall, name='wall'),

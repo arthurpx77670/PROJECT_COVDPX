@@ -1,0 +1,44 @@
+#missions{
+    display: none;
+}
+
+.mission {
+    border: none;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0 10px 0;
+    background-image: url('/static/media/img/VS.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 25%;
+
+}
+
+#mission-title{
+    color: white;
+    background-color: #444;
+    font-size: 30px;
+    position: revert;
+    margin-bottom: 5px;
+}
+
+#mission-text{
+    color: white;
+    background-color: #444;
+    font-size: 20px;
+    position: revert;
+}
+
+#player{
+   left: 200px;
+}
+#player-price{
+    float: left;
+    font-size: 40px;
+}
+
+#player-cote{
+    font-size: 10px;
+}

@@ -1,0 +1,48 @@
+{% load static %}
+{% block content %}
+    {# mission informations#}
+    {% for mission in missions %}
+        {% if mission.description == False %}
+            <div class="mission">
+                <div class="row">
+                    <div  class="col-sm-6">
+                        <div class="row" id="mission-title" >{{ mission.proposition.title }}</div>
+                        <div class="row" id="mission-text" >{{ mission.proposition.text  }}</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="player" class="col-sm-6">
+                        <a href="{% url 'profile' mission.proposition.author.user.id %}" class="top-menu">
+                            <div class="chip">
+                                {% if mission.proposition.author.picture.name != "False" %}
+                                    <img src="{% static "/media/"%}{{ mission.proposition.author.picture.url }}" alt="Person" width="96" height="96">
+                                {% endif %}
+                                {{user.username}}
+                            </div>
+                        </a>
+                        <div id="player-price">
+                            {{ mission.proposition.price }}
+                            <p id="player-cote">côte :{{ mission.proposition.cotation }}</p>
+                        </div>
+                    </div>
+
+                    <div id="player" class="col-sm-6">
+                        <a href="{% url 'profile'  mission.accept.author.user.id %}" class="top-menu">
+                            <div class="chip">
+                                {% if mission.accept.author.picture.name != "False" %}
+                                    <img src="{% static "/media/"%}{{  mission.accept.author.picture.url }}" alt="Person" width="96" height="96">
+                                {% endif %}
+                                {{user.username}}
+                            </div>
+                        </a>
+                        <div id="player-price">
+                            {{ mission.accept.price }}
+                            <p id="player-cote">côte : {{ mission.accept.cotation }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

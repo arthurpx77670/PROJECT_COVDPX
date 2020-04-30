@@ -48,11 +48,10 @@ def profile(request, userId):
                 averageMark = averageMark + commentary.mission.result.mark
         if averageMarkSize != 0:
             averageMark = int(averageMark / averageMarkSize)
-        # Commentary with mission dev
-        commentaryMissionDevRequest = Commentary.objects.filter(description=True, author=profile)
-        # posts with mission
-        postsMissionRequest = Post.objects.filter(description=True, author=profile)
 
+        # missions user againts other
+        missions = Mission.objects.filter( (Q(accept__author= profile) & Q(accept__description=True))
+                                           | (Q(proposition__author=profile) & Q(proposition__description=True)))
 
         # view on the other user
         if (userId != request.user.id):
@@ -91,8 +90,7 @@ def profile(request, userId):
                            "posts": posts,
                            "chats": chats,
                            "postsUserLikedRequest": postsUserLikedRequest,
-                           "commentaryMissionDevRequest": commentaryMissionDevRequest,
-                           "postsMissionRequest":postsMissionRequest,
+                           "missions":missions,
                            "averageMark":averageMark,
                            "xp": xp,
                            "followers": followers
@@ -106,8 +104,7 @@ def profile(request, userId):
                        "user": user,
                        "friends": friends,
                        "posts": posts,
-                       "commentaryMissionDevRequest": commentaryMissionDevRequest,
-                       "postsMissionRequest": postsMissionRequest,
+                       "missions":missions,
                        "averageMark": averageMark,
                        "xp": xp,
                        "followers": followers

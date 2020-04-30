@@ -24,6 +24,7 @@ class Commentary(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     text = models.TextField(null=True)
     price = models.FloatField(null=True)
+    cotation = models.FloatField(null=True)
     date = models.DateTimeField(default=timezone.now)
     # false display, true is in a mission
     description = models.BooleanField(default=False)
