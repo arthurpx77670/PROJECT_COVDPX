@@ -71,6 +71,7 @@ function comment(postId) {
         success: function (json) {
             $('#negociate-popup').css("display", "none");
             $('#action-take-confirm').text("Vous avez négocier")
+            location.reload()
         },
 
         // handle a non-successful response

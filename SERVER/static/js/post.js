@@ -57,7 +57,7 @@ function take(postId) {
             $('#take-popup').css("display", "none");
             $('#action-take').css("display", "none");
             $('#action-take-confirm').text("Vous avez pariez")
-
+            location.reload()
         },
 
         // handle a non-successful response

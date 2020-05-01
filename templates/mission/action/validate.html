@@ -1,0 +1,8 @@
+{% block content %}
+    <div class="winner-player">
+        Le gagnant est {{ mission.result.winner.user.username }}
+    </div>
+    <button onclick="validate({{ mission.id }})" id="validate-player">Valider</button>
+    <button onclick="refuse({{ mission.id }})" id="validate-player">Refuser</button>
+
+{% endblock %}

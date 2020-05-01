@@ -21,7 +21,8 @@
     background-color: #444;
     font-size: 30px;
     position: revert;
-    margin-bottom: 5px;
+    border-radius: 5px;
+    margin: 10px 5px 10px 0;
 }
 
 #mission-text{
@@ -29,10 +30,16 @@
     background-color: #444;
     font-size: 20px;
     position: revert;
+    border-radius: 5px;
+    margin: 10px 5px 10px 0;
+}
+
+#missions #minus{
+    margin-right: 10px;
 }
 
 #player{
-   left: 200px;
+    left: 200px;
 }
 #player-price{
     float: left;
@@ -41,4 +48,106 @@
 
 #player-cote{
     font-size: 10px;
+}
+
+.display-result-all{
+    display: none;
+    margin-left: 40px;
+}
+
+.mission #edit{
+    float: none;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.wait{
+    color: black;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: 1px solid #4CAF50;
+    background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#result-player{
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: none;
+    background-color: #4CAF50;
+    width: 45%;
+    margin-bottom: 10px;
+}
+
+#result-player:hover{
+    background-color: #45a049;
+}
+
+#action-result-confirm{
+    color: #4CAF50;
+    font-size: 20px;
+}
+
+.display-detail-all{
+    display: none;
+}
+
+.action-results{
+    margin-top: 105px;
+}
+
+.action-confirm{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+
+.display-validate-all{
+    display: none;
+}
+
+#validate-player{
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: none;
+    background-color: #4CAF50;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+#validate-player:hover{
+    background-color: #45a049;
+}
+
+
+.winner-player{
+    color: white;
+    background-color: #444;
+    font-size: 20px;
+    position: revert;
+    border-radius: 5px;
+    margin: 10px 5px 10px 0;
+
 }

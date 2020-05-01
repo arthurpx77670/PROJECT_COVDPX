@@ -1,36 +1,40 @@
 {%  load static %}
 {% block content %}
     {#        friends #}
-    <div class="row" id="friends">
-        <div id="display" class="col-sm-12">
-            {% for friend in friends %}
-                <a href="{% url 'profile' friend.id %}" class="top-menu">
-                    <div class="chip">
-                        {% if friend.profile.picture.name != "False" %}
-                            <img src="{% static "/media/"%}{{ friend.profile.picture.url }}" alt="Person" width="96" height="96">
-                        {% endif %}
-                        {{friend.username}}
-                    </div>
-                </a>
-            {% endfor %}
+    {% if friends %}
+        <div class="row" id="friends">
+            <div id="display" class="col-sm-12">
+                {% for friend in friends %}
+                    <a href="{% url 'profile' friend.id %}" class="top-menu">
+                        <div class="chip">
+                            {% if friend.profile.picture.name != "False" %}
+                                <img src="{% static "/media/"%}{{ friend.profile.picture.url }}" alt="Person" width="96" height="96">
+                            {% endif %}
+                            {{friend.username}}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 
 
     {#        followers#}
-    <div class="row" id="followers">
-        <div id="display" class="col-sm-12">
-            {% for follower in followers %}
-                <a href="{% url 'profile' follower.user.id %}" class="top-menu">
-                    <div class="chip">
-                        {% if follower.picture.name != "False" %}
-                            <img src="{% static "/media/"%}{{ follower.picture.url }}" alt="Person" width="96" height="96">
-                        {% endif %}
-                        {{follower.user.username}}
-                    </div>
-                </a>
-            {% endfor %}
+    {% if followers %}
+        <div class="row" id="followers">
+            <div id="display" class="col-sm-12">
+                {% for follower in followers %}
+                    <a href="{% url 'profile' follower.user.id %}" class="top-menu">
+                        <div class="chip">
+                            {% if follower.picture.name != "False" %}
+                                <img src="{% static "/media/"%}{{ follower.picture.url }}" alt="Person" width="96" height="96">
+                            {% endif %}
+                            {{follower.user.username}}
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
         </div>
-    </div>
+    {% endif %}
 
 {% endblock %}

@@ -1,0 +1,4 @@
+{% block content %}
+    <button onclick="confirm({{ mission.proposition.author.id }},{{ mission.id }})" id="result-player">{{ mission.proposition.author.user.username }}</button>
+    <button onclick="confirm({{ mission.accept.author.id }},{{ mission.id }})" id="result-player">{{ mission.accept.author.user.username }}</button>
+{% endblock %}

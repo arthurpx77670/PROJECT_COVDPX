@@ -6,11 +6,7 @@
                 <div class="card commentary">
                     <p><i class="fa fa-heart"></i></p>
                     <h3>
-                        {% if averageMark != 0 %}
-                            {{ averageMark }}/20
-                        {% else %}
-                            Pas encore
-                        {% endif %}
+                        {{ confidence }}%/{{ number }}
                     </h3>
                     <p>Confiance</p>
                 </div>

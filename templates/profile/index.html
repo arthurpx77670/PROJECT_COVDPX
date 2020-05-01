@@ -28,41 +28,62 @@
 
 
         {#posts#}
-        <div class="row" id="posts">
-            <div class="col-sm-12" id="display">
-                {% for post in posts %}
-                    <div class="post">
-                        {# posts  #}
-                        {% include "./../post/show/posts.html" %}
+        {% if posts %}
+            <div class="row" id="posts">
+                <div class="col-sm-12" id="display">
+                    {% for post in posts %}
+                        <div class="post">
+                            {# posts  #}
+                            {% include "./../post/show/posts.html" %}
 
-                        {#  activation if action js #}
-                        <div class="display-comment-all" id="display-comment-{{ post.id }}">
-                            <a id="minus" onclick="closeComment({{ post.id }})"><i id="send" class="fa fa-remove"></i></a>
-                            {#  comment a user post  #}
-                            {% include "./../post/action/comment.html" %}
+                            {#  activation if action js #}
+                            <div class="display-comment-all" id="display-comment-{{ post.id }}">
+                                <a id="minus" onclick="closeComment({{ post.id }})"><i id="send" class="fa fa-remove"></i></a>
+                                {#  comment a user post  #}
+                                {% include "./../post/action/comment.html" %}
 
-                            {% if post.commentary_set.all %}
-                                {% for commentary in post.commentary_set.all %}
-                                    {#  commentaries#}
-                                    {% include "./../post/show/commentaries.html" %}
-                                {% endfor %}
-                            {% endif %}
+                                {% if post.commentary_set.all %}
+                                    {% for commentary in post.commentary_set.all %}
+                                        {#  commentaries#}
+                                        {% include "./../post/show/commentaries.html" %}
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
                         </div>
-
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
 
         {#missions#}
-        <div class="row" id="missions">
-            <div class="col-sm-12" id="display">
-                {% include "./../mission/show/missions.html" %}
-                {#                {% include "./../mission/show/develop.html" %}#}
-                {#                {% include "./../mission/show/proposed.html" %}#}
+        {% if missions %}
+            <div class="row" id="missions">
+                <div class="col-sm-12" id="display">
+                    {% for mission in missions %}
+                        {% include "./../mission/show/missions.html" %}
+
+                        {# result  activation if action js #}
+                        <div class="display-result-all" id="display-result-{{ mission.id }}">
+                            <a id="minus" onclick="closeResult({{ mission.id }})"><i id="send" class="fa fa-remove"></i></a>
+                            {% include "./../mission/action/confim.html" %}
+                        </div>
+
+                        {# detail  activation if action js #}
+                        <div class="display-detail-all" id="display-detail-{{ mission.id }}">
+                            <a id="minus" onclick="closeDetail({{ mission.id }})"><i id="send" class="fa fa-remove"></i></a>
+                            {% include "./../mission/show/detail.html" %}
+                        </div>
+
+                        {# validate  activation if action js #}
+                        <div class="display-validate-all" id="display-validate-{{ mission.id }}">
+                            <a id="minus" onclick="closeValidate({{ mission.id }})"><i id="send" class="fa fa-remove"></i></a>
+                            {% include "./../mission/action/validate.html" %}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
+        {% endif %}
 
         {# write posts #}
         {% include "./../post/action/post.html" %}

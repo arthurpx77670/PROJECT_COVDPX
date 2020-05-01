@@ -60,8 +60,10 @@ urlpatterns = [
     path('login/wall', wall.wall, name='wall'),
 
     #mission
-    # path('login/cancel?<int:missionId>', mission.cancel, name='cancel'),
-    path('login/deposit?<int:missionId>', mission.deposit, name='deposit'),
+    path('login/profile?<int:userId>/deposit', mission.deposit, name='deposit'),
+    path('login/profile?<int:userId>/confirm', mission.confirm, name='confirm'),
+    path('login/profile?<int:userId>/validate', mission.validate, name='validate'),
+    path('login/profile?<int:userId>/finish', mission.finish, name='finish'),
     path('login/opinion?<int:resultId>', mission.opinion, name='opinion'),
 
 

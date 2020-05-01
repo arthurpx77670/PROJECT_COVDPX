@@ -35,23 +35,20 @@ def profile(request, userId):
         # list posts user
         posts = Post.objects.filter(description=False, author=profile).order_by('-date')
         # xp user
-        xp = 0
-        for commentary in Commentary.objects.filter(description=True, author=profile):
-            if commentary.mission.description == True:
-                xp = xp + commentary.price
-        # average mark user
-        averageMark = 0
-        averageMarkSize = 0
-        for commentary in Commentary.objects.filter(description=True, author=profile):
-            if commentary.mission.description == True:
-                averageMarkSize = + 1
-                averageMark = averageMark + commentary.mission.result.mark
-        if averageMarkSize != 0:
-            averageMark = int(averageMark / averageMarkSize)
+        xp = profile.xp
+        # level user
+        level = profile.level
+        level2 = profile.level +1
+        # confidence user
+        confidence = profile.confidence
+        # number of bet user
+        number = profile.number
 
         # missions user againts other
-        missions = Mission.objects.filter( (Q(accept__author= profile) & Q(accept__description=True))
-                                           | (Q(proposition__author=profile) & Q(proposition__description=True)))
+        missions = Mission.objects.filter(
+            ((Q(accept__author= profile) & Q(accept__description=True)) |
+            (Q(proposition__author=profile) & Q(proposition__description=True))) &
+            (Q(description=False) | (Q(description=True) & Q(result__description=False))))
 
         # view on the other user
         if (userId != request.user.id):
@@ -91,7 +88,10 @@ def profile(request, userId):
                            "chats": chats,
                            "postsUserLikedRequest": postsUserLikedRequest,
                            "missions":missions,
-                           "averageMark":averageMark,
+                           "confidence":confidence,
+                           "level":level,
+                           "level2": level2,
+                           "number":number,
                            "xp": xp,
                            "followers": followers
                            })
@@ -105,7 +105,10 @@ def profile(request, userId):
                        "friends": friends,
                        "posts": posts,
                        "missions":missions,
-                       "averageMark": averageMark,
+                       "confidence": confidence,
+                       "level": level,
+                       "level2": level2,
+                       "number": number,
                        "xp": xp,
                        "followers": followers
                        })

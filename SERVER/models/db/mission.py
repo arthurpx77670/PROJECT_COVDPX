@@ -1,8 +1,7 @@
 from django.db import models
 from SERVER.models.db.post import Commentary, Post
 from django.utils import timezone
-
-
+from SERVER.models.db.profile import Profile
 
 class Mission(models.Model):
     date = models.DateTimeField(default=timezone.now)
@@ -13,8 +12,12 @@ class Mission(models.Model):
 
 
 class Result(models.Model):
-    mark = models.IntegerField(null=True)
-    opinion = models.TextField(null=True)
     mission = models.OneToOneField(Mission, on_delete=models.CASCADE)
-    file = models.FileField(upload_to="result/")
+    winner = models.ForeignKey(Profile, on_delete=models.CASCADE,default=False, related_name="winner")
+    looser = models.ForeignKey(Profile, on_delete=models.CASCADE,default=False, related_name="looser")
+    # pas opti
+    playerConfirm = models.ForeignKey(Profile, on_delete=models.CASCADE,default=False, related_name="playerConfirm")
+    conflict = models.BooleanField(default=False)
+    description = models.BooleanField(default=False)
+
 

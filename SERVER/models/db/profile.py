@@ -4,13 +4,18 @@ from django.utils import timezone
 from django.core.cache import cache
 import datetime
 from PROJECT_COVDPX import settings
+from  SERVER.models.db.stats import Page
 
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=False)
     friends = models.ManyToManyField(User, related_name="friends")
     picture = models.ImageField(upload_to="picture/", default=False)
-    xp = models.IntegerField(null=True)
+    level = models.IntegerField(default=0)
+    xp = models.IntegerField(default=0)
+    confidence = models.IntegerField(default=100)
+    number = models.IntegerField(default=0)
+    win = models.IntegerField(default=0)
 
     def last_seen(self):
         return cache.get('seen_%s' % self.user.username)

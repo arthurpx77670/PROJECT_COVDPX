@@ -23,7 +23,7 @@ def post(request, userId):
             else:
                 file = Postform.cleaned_data.get('file')
             author = Profile.objects.get(user=request.user)
-            priceUser = price * (cotation - 1)
+            priceUser = round(price * (cotation - 1),2)
             cotationUser = round(cotation/(cotation-1),1)
 
             post = Post.objects.create(title=title,
@@ -103,7 +103,7 @@ def take(request, userId, postId):
     if request.method == 'POST':
         post = Post.objects.get(id=postId)
         author = request.user.profile
-        commentary = Commentary.objects.create(description=True, price=post.price, post=post, author = author, cotation=post.cotationUser)
+        commentary = Commentary.objects.create(description=True, price=post.priceUser, post=post, author = author, cotation=post.cotationUser)
 
         mission = Mission.objects.create(proposition=post, accept=commentary,description=False)
         mission.save()

@@ -1,48 +1,65 @@
 {% load static %}
 {% block content %}
     {# mission informations#}
-    {% for mission in missions %}
-        {% if mission.description == False %}
-            <div class="mission">
-                <div class="row">
-                    <div  class="col-sm-6">
-                        <div class="row" id="mission-title" >{{ mission.proposition.title }}</div>
-                        <div class="row" id="mission-text" >{{ mission.proposition.text  }}</div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div id="player" class="col-sm-6">
-                        <a href="{% url 'profile' mission.proposition.author.user.id %}" class="top-menu">
-                            <div class="chip">
-                                {% if mission.proposition.author.picture.name != "False" %}
-                                    <img src="{% static "/media/"%}{{ mission.proposition.author.picture.url }}" alt="Person" width="96" height="96">
-                                {% endif %}
-                                {{user.username}}
-                            </div>
-                        </a>
-                        <div id="player-price">
-                            {{ mission.proposition.price }}
-                            <p id="player-cote">côte :{{ mission.proposition.cotation }}</p>
-                        </div>
+    <div class="mission">
+        <div class="row">
+            <div id="player" class="col-sm-6">
+                <a href="{% url 'profile' mission.proposition.author.user.id %}" class="top-menu">
+                    <div class="chip">
+                        {% if mission.proposition.author.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{ mission.proposition.author.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        {{mission.proposition.author.user.username}}
                     </div>
-
-                    <div id="player" class="col-sm-6">
-                        <a href="{% url 'profile'  mission.accept.author.user.id %}" class="top-menu">
-                            <div class="chip">
-                                {% if mission.accept.author.picture.name != "False" %}
-                                    <img src="{% static "/media/"%}{{  mission.accept.author.picture.url }}" alt="Person" width="96" height="96">
-                                {% endif %}
-                                {{user.username}}
-                            </div>
-                        </a>
-                        <div id="player-price">
-                            {{ mission.accept.price }}
-                            <p id="player-cote">côte : {{ mission.accept.cotation }}</p>
-                        </div>
-                    </div>
+                </a>
+                <div id="player-price">
+                    {{ mission.proposition.price }}
+                    <p id="player-cote">côte :{{ mission.proposition.cotation }}</p>
                 </div>
             </div>
+
+            <div id="player" class="col-sm-6">
+                <a href="{% url 'profile'  mission.accept.author.user.id %}" class="top-menu">
+                    <div class="chip">
+                        {% if mission.accept.author.picture.name != "False" %}
+                            <img src="{% static "/media/"%}{{  mission.accept.author.picture.url }}" alt="Person" width="96" height="96">
+                        {% endif %}
+                        {{mission.accept.author.user.username}}
+                    </div>
+                </a>
+                <div id="player-price">
+                    {{ mission.accept.price }}
+                    <p id="player-cote">côte : {{ mission.accept.cotation }}</p>
+                </div>
+            </div>
+        </div>
+
+        {#   action #}
+        <div id="action-result-confirm"></div>
+        {% if user == request.user %}
+            {% if mission.description == False %}
+                <button class="action-results" onclick="displayResult({{ mission.id }})" id="edit">Résultat</button>
+            {% else %}
+                {% if mission.result.playerConfirm != request.user.profile %}
+                    <button class="action-results" onclick="displayValidate({{ mission.id }})" id="edit">Confirmer</button>
+                    {% else %}
+                    <button class="wait">Attente</button>
+                {% endif %}
+            {% endif %}
         {% endif %}
-    {% endfor %}
+        <button class="action-results" onclick="displayDetail({{ mission.id }})" id="edit">Détails</button>
+    </div>
+
+
+    {#  popup confim and validate  #}
+    <div id="popup" class="popup">
+        <div class="submit-modal-content animate">
+            <div class="title-popup">
+                <div class="title"></div>
+            </div>
+            <div class="content-popup"></div>
+        </div>
+    </div>
+
 {% endblock %}

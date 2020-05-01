@@ -44,6 +44,7 @@
             </a>
 
             <a href="{% url 'logout' %}">Déconnexion</a>
+            <a onclick="openChats()">Notification</a>
             <a onclick="openChats()">Chat</a>
 
         </div>
@@ -53,7 +54,8 @@
     <!-- The sidebar -->
     <div class="sidebar">
         <a class="active" href="{% url 'wall' %}">Accueil</a>
-        <a class="open-button" onclick="openForm()">Déposer</a>
+        <a class="open-button" onclick="openForm()">Créer</a>
+        <a class="open-button" onclick="openForm()">Historique</a>
         {##}
         {#        <div class="subnav">#}
         {#            <a class="subnavbtn">Paris</a>#}
@@ -79,5 +81,6 @@
     <script type="text/javascript" src="{% static "/js/coment.js" %}"></script>
     <script type="text/javascript" src="{% static "/js/chat.js" %}"></script>
     <script type="text/javascript" src="{% static "/js/display.js" %}"></script>
+    <script type="text/javascript" src="{% static "/js/mission.js" %}"></script>
 
 {% endblock %}
