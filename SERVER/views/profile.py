@@ -8,6 +8,7 @@ from django.http import HttpResponse
 import json
 from django.views.decorators.csrf import csrf_protect
 from django.db.models import Q
+from django.db.models import Avg, Count, Min, Sum
 
 
 def profile(request, userId):
@@ -24,7 +25,6 @@ def profile(request, userId):
         # list users (pas opti)
         users = User.objects.all()
         usersCount = users.count()-1
-
 
         #  user
         profile = Profile.objects.get(user_id=userId)
@@ -47,7 +47,7 @@ def profile(request, userId):
         # missions user againts other
         missions = Mission.objects.filter(
             ((Q(accept__author= profile) & Q(accept__description=True)) |
-            (Q(proposition__author=profile) & Q(proposition__description=True))) &
+             (Q(proposition__author=profile) & Q(proposition__description=True))) &
             (Q(description=False) | (Q(description=True) & Q(result__description=False))))
 
         # view on the other user
@@ -63,8 +63,8 @@ def profile(request, userId):
 
             # chats request/user
             chats = Chat.objects.filter(
-                (Q(sender=request.user.profile) & Q(receiver=user.profile))
-                | (Q(sender=user.profile) & Q(receiver=request.user.profile)))
+                (Q(sender=request.user.profile) & Q(receiver=user.profile)) |
+                (Q(sender=user.profile) & Q(receiver=request.user.profile)))
             chats = chats.order_by('date')
 
             # list of my likes on the profile user (pas opti)
@@ -96,6 +96,20 @@ def profile(request, userId):
                            "followers": followers
                            })
 
+        # view only request
+        # portfolio
+        profileRequest = userRequest.profile
+        portfolio = profile.portfolio
+
+        forcastWin = Mission.objects.filter(Q(proposition__author=profileRequest)|
+                                            Q(accept__author=profileRequest)).aggregate(Sum('proposition__price'),Sum('accept__price'))
+        forcastWin = forcastWin['proposition__price__sum']+forcastWin['accept__price__sum']
+
+        fund = profileRequest.fund
+        forcastLoose = portfolio - fund
+
+
+
         return render(request, "profile/index.html",
                       {"Postform": Postform,
                        "Autocompleteform":Autocompleteform,
@@ -110,7 +124,11 @@ def profile(request, userId):
                        "level2": level2,
                        "number": number,
                        "xp": xp,
-                       "followers": followers
+                       "followers": followers,
+                       "portfolio":portfolio,
+                       "forcastLoose" :forcastLoose,
+                       'forcastWin':forcastWin,
+                       "fund":fund
                        })
 
 

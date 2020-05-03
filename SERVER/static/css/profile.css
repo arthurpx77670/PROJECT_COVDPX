@@ -75,7 +75,6 @@
 }
 
 
-
 /*undercase */
 #display{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -83,5 +82,64 @@
     padding-top: 5px;
 
 }
+
+
+#portfolio{
+    float: right;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-family:  sans-serif;
+    line-height: 25px;
+    border-radius: 4px;
+    margin-inline-end: 7px;
+    border: none;
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+#portfolio:hover{
+    background-color: #45a049;
+}
+
+.tooltip-portfolio {
+    display:inline-block;
+    position:relative;
+    text-align:left;
+    float: right;
+    left: 20px;
+}
+
+.tooltip-portfolio h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tooltip-portfolio .bottom {
+    text-align: center;
+    min-width:300px;
+    /*max-width:400px;*/
+    top:60px;
+    left:50%;
+    transform:translate(-50%, 0);
+    padding:20px;
+    color:#666666;
+    background-color:#EEEEEE;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    display:none;
+}
+
+
+
+
+
 
 

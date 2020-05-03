@@ -1,0 +1,17 @@
+{% block content %}
+
+    <div onclick="displayPortfolio()" id="portfolio">
+        Portefeuille {{ portfolio }}
+    </div>
+
+    <div class="tooltip-portfolio">
+        <div  class="bottom">
+            <h3>En jeu
+                <a id="minus" onclick="closePortfolio()"><i id="send" class="fa fa-remove"></i></a>
+            </h3>
+            <p>Fond disponible {{ fund }}</p>
+            <p>Perte potentielle {{ forcastLoose }}</p>
+            <p>Gain potentielle {{ forcastWin }}</p>
+        </div>
+    </div>
+{% endblock %}

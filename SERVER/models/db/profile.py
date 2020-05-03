@@ -11,6 +11,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=False)
     friends = models.ManyToManyField(User, related_name="friends")
     picture = models.ImageField(upload_to="picture/", default=False)
+    portfolio = models.FloatField(default=0)
+    fund = models.FloatField(default=0)
     level = models.IntegerField(default=0)
     xp = models.IntegerField(default=0)
     confidence = models.IntegerField(default=100)

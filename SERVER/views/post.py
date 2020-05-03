@@ -26,6 +26,9 @@ def post(request, userId):
             priceUser = round(price * (cotation - 1),2)
             cotationUser = round(cotation/(cotation-1),1)
 
+            author.fund = author.portfolio - price
+            author.save()
+
             post = Post.objects.create(title=title,
                                        text=text,
                                        author_id=author.id,
@@ -64,6 +67,10 @@ def edit(request, userId, postId):
             post.deadline = deadline
             post.save()
 
+            author = Profile.objects.get(user=request.user)
+            author.fund = author.portfolio - price
+            author.save()
+
             return redirect('profile', userId)
     else:
         if(post.file != 'False'):
@@ -86,6 +93,11 @@ def edit(request, userId, postId):
 def delete(request, userId, postId):
     if request.method == 'POST':
         post = Post.objects.get(id=postId)
+
+        author = Profile.objects.get(user=request.user)
+        author.fund = author.portfolio - post.price
+        author.save()
+
         post.delete()
     return redirect('profile',userId)
 
@@ -105,6 +117,9 @@ def take(request, userId, postId):
         author = request.user.profile
         commentary = Commentary.objects.create(description=True, price=post.priceUser, post=post, author = author, cotation=post.cotationUser)
 
+        author.fund = author.portfolio - post.priceUser
+        author.save()
+
         mission = Mission.objects.create(proposition=post, accept=commentary,description=False)
         mission.save()
 
@@ -112,6 +127,22 @@ def take(request, userId, postId):
         post.save()
         return HttpResponse(
             json.dumps({}),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
+
+
+@csrf_protect
+def verify(request, userId):
+    if request.method == 'POST':
+        fund = request.user.profile.fund
+
+        return HttpResponse(
+            json.dumps({'fund':fund}),
             content_type="application/json"
         )
     else:

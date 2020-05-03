@@ -10,10 +10,16 @@
             {#   informations primary  #}
             {% include "./show/informations.html" %}
         </div>
-
         <div class="col-sm-9" id="plus" >
-            {#   actions #}
-            {% include "./action/invite_edit_chat.html" %}
+            <div class="row">
+                {#   actions #}
+                {% include "./action/invite_edit_chat.html" %}
+
+                {% if  user == request.user %}
+                    {#  portfolio #}
+                    {% include "./show/portfolio.html" %}
+                {% endif %}
+            </div>
 
             {#   progress bar#}
             {% include "./show/bar.html" %}

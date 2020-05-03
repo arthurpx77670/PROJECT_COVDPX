@@ -11,7 +11,7 @@ function closeComment(postId) {
 
 
 
-// display take popup
+// display take popup (verify portfolio)
 function negociatePopup(postId) {
     var id = '#display-comment-' +postId
     $.ajax({
@@ -23,20 +23,34 @@ function negociatePopup(postId) {
         },
 
         success: function (json) {
-            $('.content-popup').empty()
-            $('.content-popup').html(
-                "<div class='action-take-result'>"+
-                            "Prix : "
-                            +  $(id).find('input[name="price"]').val()
-                            +"<br>Nouvelle côte : "
-                            + json.newCotation
-                            + "<br>Nouvelle côte adversaire : "
-                            + json.newCotationUser +
-                        "</div>"+
-                        "<input class='button send' type='submit' onclick='comment("+ postId +")' value='Accepté'>"+
-                        "<input class='button cancel' value='Annuler' onclick='closeNegociate()'>")
+            if (json.fund >= $(id).find('input[name="price"]').val()){
+                $('.content-popup').empty()
+                $('.content-popup').html(
+                    "<div class='action-take-result'>"+
+                    "Prix : "
+                    +  $(id).find('input[name="price"]').val()
+                    +"<br>Nouvelle côte : "
+                    + json.newCotation
+                    + "<br>Nouvelle côte adversaire : "
+                    + json.newCotationUser +
+                    "</div>"+
+                    "<input class='button send' type='submit' onclick='comment("+ postId +")' value='Accepté'>"+
+                    "<input class='button cancel' value='Annuler' onclick='closeNegociate()'>")
 
-            $('#negociate-popup').css("display", "block");
+                $('#negociate-popup').css("display", "block");
+
+            }
+            else {
+                $('.content-popup').empty()
+                $('.content-popup').html(
+                    "<div class='action-take-result'>"+
+                    "Vous n'avez pas suffisament de fond"+
+                    "</div>"+
+                    "<input class='button cancel' value='Annuler' onclick='closeNegociate()'>")
+                $('#negociate-popup').css("display", "block");
+            }
+
+
         },
 
         error: function (xhr, errmsg, err) {

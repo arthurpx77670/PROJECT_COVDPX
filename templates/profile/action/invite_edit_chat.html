@@ -1,5 +1,4 @@
 {% block content %}
-    <div class="row">
         {% if request.user.is_authenticated  and request.user == user %}
             <div class="col-sm-1">
                 <a href="{% url 'edit' request.user.id %}"><button>Modifier</button></a>
@@ -21,6 +20,4 @@
                 <button onclick="openChat()" id="chat">Discuter</button>
             </div>
         {% endif %}
-    </div>
-
 {% endblock %}

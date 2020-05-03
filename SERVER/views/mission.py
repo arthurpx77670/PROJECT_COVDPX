@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from SERVER.models.db.mission import Mission, Result
-from SERVER.models.db.profile import Profile
 from SERVER.models.forms.post import OpinionForm
 from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
@@ -92,7 +91,6 @@ def finish(request,userId):
         mission = Mission.objects.get(id=missionId)
         result = mission.result
 
-        result.description = True
         #stat
         price = mission.proposition.price + mission.accept.price
         addXp = int(result.winner.xp + price)
@@ -100,15 +98,19 @@ def finish(request,userId):
             result.winner.level += 1
             addXp = addXp - 100
 
-        result.winner.xp = int(addXp)
+        result.winner.xp = addXp
         result.winner.number += 1
         result.winner.win += 1
-        result.looser.number += 1
-
-
-
+        result.winner.portfolio += price
+        result.winner.fund = result.winner.portfolio
         result.winner.save()
+
+        result.looser.number += 1
+        result.looser.portfolio -= price
+        result.looser.fund = result.looser.portfolio
         result.looser.save()
+
+        result.description = True
         result.save()
 
         return HttpResponse(
@@ -120,20 +122,3 @@ def finish(request,userId):
             json.dumps({"nothing to see": "this isn't happening"}),
             content_type="application/json"
         )
-
-
-def opinion(request, resultId):
-    if request.method == 'POST':
-        form = OpinionForm(request.POST)
-        if form.is_valid():
-            opinion = form.cleaned_data.get('opinion')
-            mark = form.cleaned_data.get('mark')
-
-            result = Result.objects.get(id=resultId)
-            result.opinion = opinion
-            result.mark = mark
-            result.save()
-
-            return redirect("profile", request.user.id)
-    else:
-        form = OpinionForm()

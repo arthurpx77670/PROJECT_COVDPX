@@ -18,6 +18,9 @@ def comment(request, postId, userId):
         price = float(request.POST.get('price'))
         cotation = round((post.price / price) + 1, 1)
 
+        author.fund = author.portfolio - post.price
+        author.save()
+
         commentary = Commentary.objects.create(text=text, author_id=author.id, post_id=postId, price=price,cotation=cotation)
         commentary.save()
 
@@ -58,8 +61,10 @@ def negociate(request, userId, postId):
         newCotation = round((post.price/newPriceUser)+1,1)
         newCotationUser = round(newCotation / (newCotation - 1), 1)
 
+        fund = request.user.profile.fund
+
         return HttpResponse(
-            json.dumps({'newCotation': newCotation, 'newCotationUser': newCotationUser}),
+            json.dumps({'newCotation': newCotation, 'newCotationUser': newCotationUser,'fund': fund}),
             content_type="application/json"
         )
     else:

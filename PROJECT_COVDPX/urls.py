@@ -49,6 +49,7 @@ urlpatterns = [
     path('login/profile/edit/<int:userId>/<int:postId>', post.edit, name='edit'),
     path('login/profile/delete/<int:userId>/<int:postId>', post.delete, name='delete'),
     path('login/profile?<int:userId>/take/<int:postId>', post.take, name='take'),
+    path('login/profile?<int:userId>/verify', post.verify, name='verify'),
 
 
     #comment
@@ -64,7 +65,4 @@ urlpatterns = [
     path('login/profile?<int:userId>/confirm', mission.confirm, name='confirm'),
     path('login/profile?<int:userId>/validate', mission.validate, name='validate'),
     path('login/profile?<int:userId>/finish', mission.finish, name='finish'),
-    path('login/opinion?<int:resultId>', mission.opinion, name='opinion'),
-
-
 ]
